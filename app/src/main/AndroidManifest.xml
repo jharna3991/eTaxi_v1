@@ -16,6 +16,18 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".DriverLoginActivity" />
+        <activity android:name=".PassengerLoginActivity" />
+        <activity android:name=".PassengerRegisterActivity" />
+        <activity android:name=".DriverRegisterActivity" />
+        <activity
+            android:name=".DriverActivity"
+            android:label="@string/title_activity_driver"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".PassengerActivity"
+            android:label="@string/title_activity_passenger"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
     </application>
 
 </manifest>
