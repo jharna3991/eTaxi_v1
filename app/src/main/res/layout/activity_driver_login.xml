@@ -1,10 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorAccent"
     tools:context="projectetaxi.etaxi_v1.DriverLoginActivity">
 
 
@@ -19,41 +17,34 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="eTaxi Service"
-            android:textColor="@color/colorPrimary"
-             />
+            android:textColor="@color/colorPrimary" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
             android:text="DRIVER LOGIN"
-            android:textColor="@color/colorPrimary"
-            />
+            android:textColor="@color/colorPrimary" />
 
         <EditText
-            android:id="@+id/editname"
+            android:id="@+id/etDriverEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="name"
             android:ems="10"
-            android:inputType="textPersonName"
-            android:textColor="@color/colorPrimary"
-             />
+            android:hint="email"
+            android:inputType="textEmailAddress" />
 
         <EditText
-            android:id="@+id/editpassword"
+            android:id="@+id/etDriverPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:ems="10"
             android:hint="password"
-            android:ems="10"
             android:inputType="textPassword"
             android:textColor="@color/colorPrimary"/>
 
-
-
-
         <Button
-            android:id="@+id/btn_login"
+            android:id="@+id/btnLogin"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -61,14 +52,20 @@
             android:text="Log in"
             android:textColor="@color/colorPrimary" />
 
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:text="Not a Member?"
+            android:textColor="@color/colorPrimary" />
 
         <Button
-            android:id="@+id/btn_register"
+            android:id="@+id/btnRegister"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Sign Up"
+            android:text="Register"
             android:textColor="@color/colorPrimary" />
 
     </LinearLayout>

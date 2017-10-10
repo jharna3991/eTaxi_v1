@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -17,98 +16,90 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Driver Registration"
+            android:layout_marginBottom="8dp"
             android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp" />
+            android:text="Driver Registration" />
 
         <EditText
-            android:id="@+id/editpname"
+            android:id="@+id/etDriverName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Name"
             android:ems="10"
+            android:hint="Name"
             android:inputType="textPersonName"
             android:textColor="@color/colorPrimary" />
 
         <EditText
-            android:id="@+id/editpname"
+            android:id="@+id/etDriverEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Email"
             android:ems="10"
+            android:hint="Email"
             android:inputType="textWebEmailAddress"
             android:textColor="@color/colorPrimary" />
 
         <EditText
-            android:id="@+id/editpname"
+            android:id="@+id/etDriverPassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Password"
             android:ems="10"
+            android:hint="Password"
             android:inputType="textPassword"
             android:textColor="@color/colorPrimary" />
 
         <EditText
-            android:id="@+id/editpname"
+            android:id="@+id/etDriverMobileNum"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Mobile No"
             android:ems="10"
+            android:hint="Mobile Number"
             android:inputType="phone"
             android:textColor="@color/colorPrimary" />
 
         <EditText
-            android:id="@+id/editpname"
+            android:id="@+id/etLicense"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Address"
             android:ems="10"
+            android:hint="License no."
+            android:inputType="number"
+            android:textColor="@color/colorPrimary" />
+
+        <EditText
+            android:id="@+id/etTaxiNum"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Taxi no."
+            android:inputType="number"
+            android:textColor="@color/colorPrimary" />
+
+        <EditText
+            android:id="@+id/etDriverAddress"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Address"
             android:inputType="textPostalAddress"
             android:textColor="@color/colorPrimary" />
 
         <EditText
-            android:id="@+id/editpname"
+            android:id="@+id/etDriverStatus"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Taxi no."
             android:ems="10"
-            android:inputType="number"
+            android:hint="Status"
+            android:inputType="text"
             android:textColor="@color/colorPrimary" />
-
-        <EditText
-            android:id="@+id/editpname"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="License no."
-            android:ems="10"
-            android:inputType="number"
-            android:textColor="@color/colorPrimary" />
-
-        <TextView
-            style="@style/Base.TextAppearance.AppCompat.Medium"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="end"
-            android:text="Already have an account?"
-            android:layout_marginTop="8dp"
-            android:layout_marginBottom="8dp" />
-
-
-
-
-
 
         <Button
-            android:id="@+id/btn_register"
+            android:id="@+id/btDriverRegister"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:text="Sign Up"
+            android:text="Register"
             android:textColor="@color/colorPrimary" />
 
-
     </LinearLayout>
-
-
 </LinearLayout>
