@@ -44,7 +44,7 @@
             android:textColor="@color/colorPrimary"/>
 
         <Button
-            android:id="@+id/btnLogin"
+            android:id="@+id/btDriverLogin"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -60,7 +60,7 @@
             android:textColor="@color/colorPrimary" />
 
         <Button
-            android:id="@+id/btnRegister"
+            android:id="@+id/btDriverRegister"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

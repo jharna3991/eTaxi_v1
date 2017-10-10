@@ -28,7 +28,7 @@
             android:textColor="@color/colorPrimary" />
 
         <ImageButton
-            android:id="@+id/passenger_bt"
+            android:id="@+id/btPassenger"
             android:layout_width="match_parent"
             android:layout_height="196dp"
             app:layout_constraintLeft_toLeftOf="parent"
@@ -47,7 +47,7 @@
 
 
         <ImageButton
-            android:id="@+id/driver_bt"
+            android:id="@+id/btDriver"
             android:layout_width="match_parent"
             android:layout_height="196dp"
             android:layout_marginRight="5dp"

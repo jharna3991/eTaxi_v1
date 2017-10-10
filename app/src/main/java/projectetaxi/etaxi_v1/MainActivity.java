@@ -1,10 +1,9 @@
 package projectetaxi.etaxi_v1;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.view.Window;
 import android.widget.ImageButton;
 
 public class MainActivity extends AppCompatActivity {
@@ -15,10 +14,10 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
-        ImageButton passenger_bt=(ImageButton) findViewById(R.id.passenger_bt);
-        ImageButton driver_bt=(ImageButton) findViewById(R.id.driver_bt);
+        final ImageButton btDriver = (ImageButton) findViewById(R.id.btDriver);
+        final ImageButton btPassenger = (ImageButton) findViewById(R.id.btPassenger);
 
-        passenger_bt.setOnClickListener(new View.OnClickListener(){
+        btPassenger.setOnClickListener(new View.OnClickListener() {
            @Override
             public void onClick(View view){
                Intent loginIntent = new Intent(MainActivity.this, PassengerLoginActivity.class);
@@ -26,7 +25,7 @@ public class MainActivity extends AppCompatActivity {
            }
         });
 
-        driver_bt.setOnClickListener(new View.OnClickListener() {
+        btDriver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent loginIntent = new Intent(MainActivity.this, DriverLoginActivity.class);

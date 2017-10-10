@@ -57,7 +57,7 @@
             android:textColor="@color/colorPrimary" />
 
         <EditText
-            android:id="@+id/editpname"
+            android:id="@+id/etPassengerAddress"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -66,7 +66,7 @@
             android:textColor="@color/colorPrimary" />
 
         <Button
-            android:id="@+id/btn_register"
+            android:id="@+id/btPassengerRegister"
             style="@style/Widget.AppCompat.Button.Colored"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -76,6 +76,4 @@
 
 
     </LinearLayout>
-
-
 </LinearLayout>
