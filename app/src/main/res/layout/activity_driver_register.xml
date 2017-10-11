@@ -53,7 +53,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Mobile Number"
-            android:inputType="phone"
+            android:inputType="text"
             android:textColor="@color/colorPrimary" />
 
         <EditText
@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="License no."
-            android:inputType="number"
+            android:inputType="text"
             android:textColor="@color/colorPrimary" />
 
         <EditText
@@ -71,7 +71,7 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Taxi no."
-            android:inputType="number"
+            android:inputType="text"
             android:textColor="@color/colorPrimary" />
 
         <EditText
@@ -80,15 +80,6 @@
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Address"
-            android:inputType="textPostalAddress"
-            android:textColor="@color/colorPrimary" />
-
-        <EditText
-            android:id="@+id/etDriverStatus"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:ems="10"
-            android:hint="Status"
             android:inputType="text"
             android:textColor="@color/colorPrimary" />
 

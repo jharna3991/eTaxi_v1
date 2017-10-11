@@ -6,7 +6,6 @@
     tools:context="projectetaxi.etaxi_v1.DriverLoginActivity">
 
 
-
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -41,7 +40,7 @@
             android:ems="10"
             android:hint="password"
             android:inputType="textPassword"
-            android:textColor="@color/colorPrimary"/>
+            android:textColor="@color/colorPrimary" />
 
         <Button
             android:id="@+id/btDriverLogin"
