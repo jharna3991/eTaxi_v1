@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class DriverRegisterRequest extends StringRequest {
 
-    private static final String REGISTER_REQUEST_URL = "192.168.100.4:8000/api/v1/drivers";
+    private static final String REGISTER_REQUEST_URL = "http://192.168.100.4:8000/api/v1/drivers";
     private Map<String, String> params;
 
     public DriverRegisterRequest(String name, String email, String password, String mobileNum,
@@ -35,4 +35,12 @@ public class DriverRegisterRequest extends StringRequest {
 
         return params;
     }
+
+   /* @Override
+    public Map<String, String> getHeaders() {
+        params.put("Content-Type", "application/json");
+        params.put("Accept", "application/json");
+
+        return params;
+    }*/
 }
