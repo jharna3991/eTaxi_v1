@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class PassengerLoginRequest extends StringRequest {
 
-    private static final String REGISTER_REQUEST_URL = "http://192.168.100.4:8000/api/v1/passengers";
+    private static final String REGISTER_REQUEST_URL = "http://192.168.100.4:8000/api/v1/passenger/login";
     private Map<String, String> params;
 
     public PassengerLoginRequest(String email, String password, Response.Listener<String> listener) {

@@ -7,7 +7,7 @@ package projectetaxi.etaxi_v1;
 public class ApiToken {
 
     private  String driverToken;
-    private String pasengerToken;
+    private String passengerToken;
 
     public String getDriverToken() {
         return driverToken;
@@ -17,11 +17,11 @@ public class ApiToken {
         this.driverToken = driverToken;
     }
 
-    public String getPasengerToken() {
-        return pasengerToken;
+    public String getPassengerToken() {
+        return passengerToken;
     }
 
-    public void setPasengerToken(String pasengerToken) {
-        this.pasengerToken = pasengerToken;
+    public void setPassengerToken(String passengerToken) {
+        this.passengerToken = passengerToken;
     }
 }
