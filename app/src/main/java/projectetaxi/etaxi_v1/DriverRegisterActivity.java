@@ -2,11 +2,12 @@ package projectetaxi.etaxi_v1;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.v7.app.AlertDialog;
+//import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -32,7 +33,6 @@ public class DriverRegisterActivity extends AppCompatActivity {
 
         final Button btDriverRegister = (Button) findViewById(R.id.btDriverRegister);
 
-
         btDriverRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -53,19 +53,22 @@ public class DriverRegisterActivity extends AppCompatActivity {
 
                         try {
                             JSONObject jsonResponse = new JSONObject(response);
-                            boolean success = jsonResponse.getBoolean("Success");
+                            boolean success = jsonResponse.getBoolean("success");
 
-                            if (success) {
+                            if(success) {
 
                                 Intent intent = new Intent(DriverRegisterActivity.this, DriverLoginActivity.class);
                                 DriverRegisterActivity.this.startActivity(intent);
                             } else {
 
-                                AlertDialog.Builder builder = new AlertDialog.Builder(DriverRegisterActivity.this);
-                                builder.setMessage("Register Failed")
-                                        .setNegativeButton("Try Again", null)
-                                        .create()
-                                        .show();
+                                Toast.makeText(getApplicationContext(), "Register Failed, try again",
+                                        Toast.LENGTH_SHORT).show();
+
+//                                AlertDialog.Builder builder = new AlertDialog.Builder(DriverRegisterActivity.this);
+//                                builder.setMessage("Register Failed")
+//                                        .setNegativeButton("Try Again", null)
+//                                        .create()
+//                                        .show();
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();

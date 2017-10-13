@@ -10,14 +10,14 @@ import java.util.Map;
  * Created by Ashim Bazracharya on 10/10/2017.
  */
 
-public class DriverRegisterRequest extends StringRequest {
+public class PassengerRegisterRequest extends StringRequest {
 
-    private static final String REGISTER_REQUEST_URL = "http://192.168.100.4:8000/api/v1/drivers";
+    private static final String REGISTER_REQUEST_URL = "http://192.168.100.4:8000/api/v1/passengers";
     private Map<String, String> params;
 
-    public DriverRegisterRequest(String name, String email, String password, String mobileNum,
-                                 String licNum, String taxiNum, String address,
-                                 Response.Listener<String> listener) {
+    public PassengerRegisterRequest(String name, String email, String password, String mobileNum,
+                                    String address,
+                                    Response.Listener<String> listener) {
         super(Method.POST, REGISTER_REQUEST_URL, listener, null);
 
         params = new HashMap<>();
@@ -25,8 +25,6 @@ public class DriverRegisterRequest extends StringRequest {
         params.put("email", email);
         params.put("password", password);
         params.put("mobileNumber", mobileNum);
-        params.put("licenseNumber", licNum);
-        params.put("taxiNumber", taxiNum);
         params.put("address", address);
     }
 
