@@ -13,11 +13,14 @@
         android:orientation="vertical">
 
         <TextView
-            style="@style/Base.TextAppearance.AppCompat.Medium"
+            android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
+            android:textSize="20sp"
+            android:textStyle="bold"
             android:layout_marginBottom="8dp"
+            android:textColor="@color/colorBlack"
             android:layout_marginTop="8dp"
             android:text="Passenger Registration" />
 

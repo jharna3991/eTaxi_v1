@@ -11,6 +11,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Passenger Login"
+        android:textSize="20sp"
+        android:textStyle="bold"
         android:textColor="@color/colorBlack"
         android:layout_gravity="center_horizontal"
         android:padding="10dp"
@@ -59,6 +61,7 @@
         android:layout_gravity="center_horizontal"
         android:text="Not a Member?"
         android:textColor="@color/colorBlack"
+        android:textSize="15sp"
         android:id="@+id/tvNotMember3"
         android:layout_marginTop="30dp" />
 
