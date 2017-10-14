@@ -1,5 +1,6 @@
 package projectetaxi.etaxi_v1;
 
+import android.app.FragmentManager;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -53,7 +54,7 @@ public class DriverActivity extends AppCompatActivity
         navigationView.setNavigationItemSelectedListener(this);
 
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
-                .findFragmentById(R.id.map);
+                .findFragmentById(R.id.content_map);
         mapFragment.getMapAsync(this);
     }
 
@@ -102,18 +103,38 @@ public class DriverActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
+
+        FragmentManager fragman = getFragmentManager();
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
         if (id == R.id.nav_status) {
-            // Handle the camera action
+
+            fragman.beginTransaction()
+                    .replace(R.id.content_map, new DriverStatusFragment())
+                    .commit();
         } else if (id == R.id.nav_history) {
+
+            fragman.beginTransaction()
+                    .replace(R.id.content_map, new DriverHistoryFragment())
+                    .commit();
 
         } else if (id == R.id.nav_setting) {
 
+            fragman.beginTransaction()
+                    .replace(R.id.content_map, new DriverSettingFragment())
+                    .commit();
         } else if (id == R.id.nav_info) {
 
+            fragman.beginTransaction()
+                    .replace(R.id.content_map, new AboutUsFragment())
+                    .commit();
+
         } else if (id == R.id.nav_logout) {
+
+            fragman.beginTransaction()
+                    .replace(R.id.content_map, new DriverLogOutFragment())
+                    .commit();
 
         }
 
