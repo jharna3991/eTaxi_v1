@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class DriverRegisterRequest extends StringRequest {
 
-    private static final String REGISTER_REQUEST_URL = "http://192.168.100.4:8000/api/v1/drivers";
+    private static final String REGISTER_REQUEST_URL = URLRequest.driverRegisterRequest;
     private Map<String, String> params;
 
     public DriverRegisterRequest(String name, String email, String password, String mobileNum,
