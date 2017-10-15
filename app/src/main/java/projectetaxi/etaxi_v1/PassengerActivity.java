@@ -1,8 +1,10 @@
 package projectetaxi.etaxi_v1;
 
+import android.app.ActionBar;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.app.FragmentManager;
 import android.view.View;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -35,12 +37,13 @@ public class PassengerActivity extends AppCompatActivity
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-        drawer.setDrawerListener(toggle);
+        drawer.addDrawerListener(toggle);
         toggle.syncState();
 
         NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
         navigationView.setNavigationItemSelectedListener(this);
     }
+
 
     @Override
     public void onBackPressed() {
@@ -77,18 +80,42 @@ public class PassengerActivity extends AppCompatActivity
     @SuppressWarnings("StatementWithEmptyBody")
     @Override
     public boolean onNavigationItemSelected(MenuItem item) {
+
+        FragmentManager fragman = getFragmentManager();
         // Handle navigation view item clicks here.
         int id = item.getItemId();
 
         if (id == R.id.nav_booktaxi) {
-            // Handle the camera action
+
+            fragman.beginTransaction()
+                    .replace(R.id.content_map, new TaxiBookingFragment())
+                    .commit();
         } else if (id == R.id.nav_history) {
+
+            fragman.beginTransaction()
+                    .replace(R.id.content_map, new PassengerHistoryFragment())
+                    .commit();
 
         } else if (id == R.id.nav_setting) {
 
+
+            fragman.beginTransaction()
+                    .replace(R.id.content_map, new PassengerSettingFragment())
+                    .commit();
+
         } else if (id == R.id.nav_info) {
 
+
+            fragman.beginTransaction()
+                    .replace(R.id.content_map, new AboutUsFragment())
+                    .commit();
+
         } else if (id == R.id.nav_logout) {
+
+
+            fragman.beginTransaction()
+                    .replace(R.id.content_map, new PassengerLogOutFragment())
+                    .commit();
 
         }
 

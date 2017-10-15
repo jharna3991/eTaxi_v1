@@ -7,7 +7,7 @@
             android:icon="@drawable/taxi_booking_icon"
             android:title="Book A Taxi" />
         <item
-            android:id="@+id/nav_History"
+            android:id="@+id/nav_history"
             android:icon="@drawable/history_icon"
             android:title="History" />
         <item
