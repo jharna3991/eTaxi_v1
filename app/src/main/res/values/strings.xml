@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">eTaxi_v1</string>
+    <string name="app_name">eTaxi Service</string>
     <string name="title_activity_driver">Driver Activity</string>
 
     <string name="navigation_drawer_open">Open navigation drawer</string>
