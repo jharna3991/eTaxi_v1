@@ -18,6 +18,7 @@ import org.json.JSONObject;
 public class PassengerLoginActivity extends AppCompatActivity {
 
     ApiToken token = new ApiToken();
+    URLRequest myEmail = new URLRequest();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +36,8 @@ public class PassengerLoginActivity extends AppCompatActivity {
             public void onClick(View view){
 
                 final String email = etPassengerEmail.getText().toString();
+                myEmail.passengerEmail = email;
+
                 final String password = etPassengerPassword.getText().toString();
 
                 Response.Listener<String> responseListener = new Response.Listener<String>() {

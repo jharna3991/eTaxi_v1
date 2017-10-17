@@ -13,11 +13,11 @@ import java.util.Map;
 
 public class PassengerLoginRequest extends StringRequest {
 
-    private static final String REGISTER_REQUEST_URL = URLRequest.passengerLoginRequest;
+    private static final String LOGIN_REQUEST_URL = URLRequest.passengerLoginRequest;
     private Map<String, String> params;
 
     public PassengerLoginRequest(String email, String password, Response.Listener<String> listener) {
-        super(Request.Method.POST, REGISTER_REQUEST_URL, listener, null);
+        super(Request.Method.POST, LOGIN_REQUEST_URL, listener, null);
 
         params = new HashMap<>();
         params.put("email", email);
