@@ -8,15 +8,17 @@
     tools:context="projectetaxi.etaxi_v1.PassengerRegisterActivity">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
-        android:textSize="20sp"
-        android:textColor="@color/colorBlack"
-        android:textStyle="bold"
         android:layout_marginBottom="8dp"
         android:layout_marginTop="8dp"
-        android:text="Driver Registration" />
+        android:text="Driver Registration"
+        android:textColor="@color/colorBlack"
+        android:layout_margin="50dp"
+        android:textSize="20sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/etDriverName"

@@ -1,14 +1,52 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/taxi_booking">
 
-    <TextView
-        android:id="@+id/tvTaxiBooking"
-        android:layout_width="wrap_content"
+    <Button
+        style="@style/button_style_yellow"
+        android:id="@+id/btDestination"
+        android:textColor="@color/colorBlack"
+        android:layout_width="172dp"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="299dp"
-        android:textSize="30sp"
-        android:text="Taxi Booking Area" />
-</RelativeLayout>
+        android:text="Destination"
+        android:layout_marginTop="100dp"
+        android:layout_gravity="center_horizontal"/>
+
+
+    <Button
+        style="@style/button_style_white"
+        android:id="@+id/btNearbyDriver"
+        android:layout_width="199dp"
+        android:layout_height="wrap_content"
+        android:text="Near By Driver"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="20dp" />
+
+
+    <Button
+        style="@style/button_style_black"
+        android:id="@+id/btCalculatePrice"
+        android:layout_width="204dp"
+        android:textColor="@color/colorWhite"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Calculate Price"
+        android:layout_marginTop="20dp" />
+
+    <Button
+        style="@style/button_style_yellow"
+        android:id="@+id/btBookTaxi"
+        android:textColor="@color/colorBlack"
+        android:layout_width="148dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="wrap_content"
+        android:text="Book"
+        android:layout_marginTop="100dp" />
+
+
+
+</LinearLayout>

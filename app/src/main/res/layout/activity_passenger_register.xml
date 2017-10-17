@@ -17,17 +17,18 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="8dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginTop="50dp"
+            android:text="Passenger Registration"
             android:textColor="@color/colorBlack"
-            android:layout_marginTop="8dp"
-            android:text="Passenger Registration" />
+            android:textSize="20sp"
+            android:textStyle="bold" />
 
         <EditText
             android:id="@+id/etPassengerName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:drawableLeft="@drawable/person_icon"
             android:drawablePadding="10dp"
             android:drawableStart="@drawable/person_icon"

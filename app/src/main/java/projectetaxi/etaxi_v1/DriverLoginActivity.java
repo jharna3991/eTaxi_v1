@@ -10,6 +10,8 @@ import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.BasicNetwork;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
@@ -18,6 +20,7 @@ import org.json.JSONObject;
 public class DriverLoginActivity extends AppCompatActivity {
 
     ApiToken token = new ApiToken();
+    URLRequest myEmail = new URLRequest();
     //protected String apiToken;
 
     @Override
@@ -36,9 +39,11 @@ public class DriverLoginActivity extends AppCompatActivity {
             public void onClick(View view){
 
                 final String email = etDriverEmail.getText().toString();
+                myEmail.driverEmail = email;
+
                 final String password = etDriverPassword.getText().toString();
 
-                Response.Listener<String> responseListener = new Response.Listener<String>() {
+                final Response.Listener<String> responseListener = new Response.Listener<String>() {
 
 
                     @Override
@@ -51,7 +56,7 @@ public class DriverLoginActivity extends AppCompatActivity {
 
                             if(success) {
 
-                                Intent intent = new Intent(DriverLoginActivity.this, DriverActivity.class);
+                                Intent intent = new Intent(DriverLoginActivity.this, DriverMainActivity.class);
                                 DriverLoginActivity.this.startActivity(intent);
                                 Toast.makeText(getApplicationContext(), token.getDriverToken(),
                                         Toast.LENGTH_SHORT).show();
@@ -67,6 +72,7 @@ public class DriverLoginActivity extends AppCompatActivity {
 //                                        .show();
                             }
                         } catch (JSONException e) {
+
                             e.printStackTrace();
                         }
                     }

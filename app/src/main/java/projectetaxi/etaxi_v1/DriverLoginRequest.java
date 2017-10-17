@@ -12,11 +12,11 @@ import java.util.Map;
 
 public class DriverLoginRequest extends StringRequest {
 
-    private static final String REGISTER_REQUEST_URL = URLRequest.driverLoginRequest;
+    private static final String LOGIN_REQUEST_URL = URLRequest.driverLoginRequest;
     private Map<String, String> params;
 
     public DriverLoginRequest(String email, String password, Response.Listener<String> listener) {
-        super(Method.POST, REGISTER_REQUEST_URL, listener, null);
+        super(Method.POST, LOGIN_REQUEST_URL, listener, null);
 
         params = new HashMap<>();
         params.put("email", email);
