@@ -56,7 +56,7 @@ public class DriverLoginActivity extends AppCompatActivity {
 
                             if(success) {
 
-                                Intent intent = new Intent(DriverLoginActivity.this, DriverActivity.class);
+                                Intent intent = new Intent(DriverLoginActivity.this, DriverMainActivity.class);
                                 DriverLoginActivity.this.startActivity(intent);
                                 Toast.makeText(getApplicationContext(), token.getDriverToken(),
                                         Toast.LENGTH_SHORT).show();

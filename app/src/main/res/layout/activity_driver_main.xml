@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="projectetaxi.etaxi_v1.DriverMainActivity">
+
+    <TextView
+        android:id="@+id/tvDriName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginLeft="28dp"
+        android:textSize="16sp"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="22dp"
+        android:text="Name" />
+
+    <TextView
+        android:id="@+id/tvDriEmail"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:text="Email"
+        android:layout_below="@+id/ibDriSetting"
+        android:layout_alignLeft="@+id/tvDriName"
+        android:layout_alignStart="@+id/tvDriName" />
+
+
+    <Button
+        android:id="@+id/btDriHistory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="History"
+        android:layout_marginBottom="58dp"
+        android:layout_above="@+id/btAboutUs"
+        android:layout_alignRight="@+id/btAboutUs"
+        android:layout_alignEnd="@+id/btAboutUs" />
+
+    <Button
+        android:id="@+id/btAboutUs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="About Us"
+        android:layout_marginBottom="175dp"
+        android:layout_above="@+id/ibDriLogout"
+        android:layout_centerHorizontal="true" />
+
+    <ImageButton
+        android:id="@+id/ibDriLogout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="22dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        app:srcCompat="@drawable/logout_icon"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
+
+    <ImageButton
+        android:id="@+id/ibDriSetting"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@drawable/setting_icon"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginTop="12dp" />
+
+    <TextView
+        android:id="@+id/tvDriStatus"
+        android:layout_width="wrap_content"
+        android:textSize="16sp"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tvDriEmail"
+        android:layout_alignStart="@+id/tvDriEmail"
+        android:layout_below="@+id/tvDriEmail"
+        android:layout_marginTop="71dp"
+        android:text="Status" />
+
+    <ToggleButton
+        android:id="@+id/toggleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ToggleDriStatus"
+        android:layout_alignBaseline="@+id/tvDriStatus"
+        android:layout_alignBottom="@+id/tvDriStatus"
+        android:layout_toRightOf="@+id/tvDriStatus"
+        android:layout_toEndOf="@+id/tvDriStatus"
+        android:layout_marginLeft="19dp"
+        android:layout_marginStart="19dp" />
+
+</RelativeLayout>

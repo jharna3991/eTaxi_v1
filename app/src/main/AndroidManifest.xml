@@ -2,10 +2,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="projectetaxi.etaxi_v1">
 
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_EXTERNAL_STORAGE" />
-
 
     <application
         android:allowBackup="true"
@@ -26,6 +25,7 @@
         <meta-data
             android:name="com.google.android.geo.API_KEY"
             android:value="AIzaSyDhbzQMMKFETRRuNNMyqCetJpzTrqZjEEw" />
+
         <activity android:name=".UserSelectActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -38,15 +38,13 @@
         <activity android:name=".PassengerRegisterActivity" />
         <activity android:name=".DriverRegisterActivity" />
         <activity
-            android:name=".DriverActivity"
+            android:name=".DriverMainActivity"
             android:label="@string/title_activity_driver"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".PassengerActivity"
+            android:name=".PassengerMainActivity"
             android:label="@string/title_activity_passenger"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
     </application>
-
-
 
 </manifest>

@@ -53,7 +53,7 @@ public class PassengerLoginActivity extends AppCompatActivity {
 
                             if(success) {
 
-                                Intent intent = new Intent(PassengerLoginActivity.this, PassengerActivity.class);
+                                Intent intent = new Intent(PassengerLoginActivity.this, PassengerMainActivity.class);
                                 PassengerLoginActivity.this.startActivity(intent);
                                 Toast.makeText(getApplicationContext(), token.getPassengerToken(),
                                         Toast.LENGTH_SHORT).show();
