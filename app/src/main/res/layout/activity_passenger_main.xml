@@ -33,41 +33,45 @@
         android:id="@+id/btBookTaxi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="132dp"
         android:text="Book a Taxi"
-        android:layout_below="@+id/tvPassEmail"
-        android:layout_centerHorizontal="true" />
+        android:layout_marginBottom="20dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@+id/btPassHistory"
+        android:layout_toEndOf="@+id/btPassHistory"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp" />
 
     <Button
         android:id="@+id/btPassHistory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="History"
-        android:layout_below="@+id/btBookTaxi"
-        android:layout_alignRight="@+id/btAboutUs"
-        android:layout_alignEnd="@+id/btAboutUs"
-        android:layout_marginTop="105dp" />
+        android:layout_alignBaseline="@+id/btBookTaxi"
+        android:layout_alignBottom="@+id/btBookTaxi"
+        android:layout_alignLeft="@+id/tvPassEmail"
+        android:layout_alignStart="@+id/tvPassEmail" />
 
     <Button
         android:id="@+id/btAboutUs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="About Us"
-        android:layout_marginBottom="58dp"
-        android:layout_above="@+id/ibPassLogout"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignBottom="@+id/ibPassLogout"
+        android:layout_toLeftOf="@+id/ibPassLogout"
+        android:layout_toStartOf="@+id/ibPassLogout"
+        android:layout_marginRight="8dp"
+        android:layout_marginEnd="8dp" />
 
     <ImageButton
         android:id="@+id/ibPassLogout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="22dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginRight="25dp"
         app:srcCompat="@drawable/logout_icon"
-        android:layout_alignParentBottom="true"
+        android:layout_alignBottom="@+id/btBookTaxi"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="18dp"
+        android:layout_marginEnd="18dp" />
 
     <ImageButton
         android:id="@+id/ibPassSetting"
@@ -76,9 +80,6 @@
         app:srcCompat="@drawable/setting_icon"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="12dp" />
+        android:layout_alignParentEnd="true" />
 
 </RelativeLayout>

@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class DriverLoginRequest extends StringRequest {
 
-    private static final String LOGIN_REQUEST_URL = URLRequest.driverLoginRequest;
+    private static String LOGIN_REQUEST_URL = URLRequest.driverLoginRequest;
     private Map<String, String> params;
 
     public DriverLoginRequest(String email, String password, Response.Listener<String> listener) {

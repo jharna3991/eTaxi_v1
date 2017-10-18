@@ -1,0 +1,62 @@
+package projectetaxi.etaxi_v1;
+
+import com.android.volley.AuthFailureError;
+import com.android.volley.Response;
+import com.android.volley.toolbox.StringRequest;
+
+import java.util.HashMap;
+import java.util.Map;
+
+/**
+ * Created by Ashim Bazracharya on 10/10/2017.
+ */
+
+public class BookingRequest extends StringRequest {
+
+    ApiToken apiToken = new ApiToken();
+    private String token = apiToken.getPassengerToken();
+
+    private static final String BOOKING_REQUEST_URL = URLRequest.bookingRequest;
+    private Map<String, String> params;
+
+    public BookingRequest(String roadType, String driverEmail, String passengerEmail, double srcLat,
+                          double srcLong, double destLat, double destLong, String bookingStatus,
+                          double amount, Response.Listener<String>listener) {
+        super(Method.POST, BOOKING_REQUEST_URL, listener, null);
+
+        params = new HashMap<>();
+        params.put("roadType", roadType);
+        params.put("driverEmail", driverEmail);
+        params.put("passengerEmail", passengerEmail);
+        params.put("sourceLatitude", srcLat + "");
+        params.put("sourceLongitude", srcLong + "");
+        params.put("destinationLatitude", destLat + "");
+        params.put("destinationLongitude", destLong + "");
+        params.put("status", bookingStatus);
+        params.put("amount", amount + "");
+    }
+
+    @Override
+    public Map<String, String> getParams() {
+
+        return params;
+    }
+
+    @Override
+    public Map<String, String> getHeaders() throws AuthFailureError {
+
+        Map<String, String> headers = new HashMap<>();
+
+        headers.put("Authorization", "Bearer " + token);
+
+        return headers;
+    }
+
+   /* @Override
+    public Map<String, String> getHeaders() {
+        params.put("Content-Type", "application/json");
+        params.put("Accept", "application/json");
+
+        return params;
+    }*/
+}
