@@ -35,19 +35,20 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="History"
-        android:layout_marginBottom="58dp"
-        android:layout_above="@+id/btAboutUs"
-        android:layout_alignRight="@+id/btAboutUs"
-        android:layout_alignEnd="@+id/btAboutUs" />
+        android:layout_alignBottom="@+id/swDriStatus"
+        android:layout_alignLeft="@+id/tvDriEmail"
+        android:layout_alignStart="@+id/tvDriEmail" />
 
     <Button
         android:id="@+id/btAboutUs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="About Us"
-        android:layout_marginBottom="175dp"
-        android:layout_above="@+id/ibDriLogout"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignTop="@+id/ibDriLogout"
+        android:layout_toLeftOf="@+id/ibDriLogout"
+        android:layout_toStartOf="@+id/ibDriLogout"
+        android:layout_marginRight="14dp"
+        android:layout_marginEnd="14dp" />
 
     <ImageButton
         android:id="@+id/ibDriLogout"
@@ -78,22 +79,21 @@
         android:layout_width="wrap_content"
         android:textSize="16sp"
         android:layout_height="wrap_content"
-        android:layout_alignLeft="@+id/tvDriEmail"
-        android:layout_alignStart="@+id/tvDriEmail"
-        android:layout_below="@+id/tvDriEmail"
-        android:layout_marginTop="71dp"
-        android:text="Status" />
+        android:text="Status"
+        android:layout_alignRight="@+id/swDriStatus"
+        android:layout_alignEnd="@+id/swDriStatus"
+        android:layout_marginRight="42dp"
+        android:layout_marginEnd="42dp"
+        android:layout_above="@+id/swDriStatus" />
 
-    <ToggleButton
-        android:id="@+id/toggleButton"
+    <Switch
+        android:id="@+id/swDriStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="ToggleDriStatus"
-        android:layout_alignBaseline="@+id/tvDriStatus"
-        android:layout_alignBottom="@+id/tvDriStatus"
-        android:layout_toRightOf="@+id/tvDriStatus"
-        android:layout_toEndOf="@+id/tvDriStatus"
-        android:layout_marginLeft="19dp"
-        android:layout_marginStart="19dp" />
+        android:layout_alignBottom="@+id/btAboutUs"
+        android:layout_toLeftOf="@+id/btAboutUs"
+        android:layout_toStartOf="@+id/btAboutUs"
+        android:layout_marginRight="14dp"
+        android:layout_marginEnd="14dp" />
 
 </RelativeLayout>

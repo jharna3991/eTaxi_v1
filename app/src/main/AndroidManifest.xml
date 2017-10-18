@@ -45,6 +45,14 @@
             android:name=".PassengerMainActivity"
             android:label="@string/title_activity_passenger"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity android:name=".BookingHistoryActivity" />
+        <activity android:name=".BookingActivity" />
+        <activity android:name=".PassengerSettingActivity" />
+        <activity android:name=".AboutUs" />
+        <activity android:name=".PassengerLogoutActivity" />
+        <activity android:name=".ServedHistoryActivity" />
+        <activity android:name=".DriverLogoutActivity" />
+        <activity android:name=".DriverSettingActivity"></activity>
     </application>
 
 </manifest>
