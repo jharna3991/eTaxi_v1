@@ -13,8 +13,9 @@ import java.util.Map;
 
 public class BookingRequest extends StringRequest {
 
-    ApiToken apiToken = new ApiToken();
-    private String token = apiToken.getPassengerToken();
+    final String TAG = this.getClass().getName();
+
+    PassengerLoginActivity passenger = new PassengerLoginActivity();
 
     private static final String BOOKING_REQUEST_URL = URLRequest.bookingRequest;
     private Map<String, String> params;
@@ -42,21 +43,21 @@ public class BookingRequest extends StringRequest {
         return params;
     }
 
-//    @Override
-//    public Map<String, String> getHeaders() throws AuthFailureError {
-//
-//        Map<String, String> headers = new HashMap<>();
-//
-//        headers.put("Authorization", "Bearer " + token);
-//
-//        return headers;
-//    }
+    @Override
+    public Map<String, String> getHeaders() throws AuthFailureError {
 
-   /* @Override
-    public Map<String, String> getHeaders() {
-        params.put("Content-Type", "application/json");
+        Map<String, String> params = new HashMap<>();
+
+        //params.put("Content-Type", "application/json");
         params.put("Accept", "application/json");
+        params.put("Authorization", "Bearer " + passenger.getPassenToken());
 
         return params;
-    }*/
+    }
+
+//    @Override
+//    public Map<String, String> getHeaders() {
+//        params.put("Authorization", "Bearer " + token);
+//        return params;
+//    }
 }

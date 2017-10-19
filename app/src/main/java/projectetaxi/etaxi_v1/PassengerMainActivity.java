@@ -11,17 +11,6 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.Request;
-import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
-import com.android.volley.toolbox.Volley;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-import org.w3c.dom.Text;
-
 public class PassengerMainActivity extends AppCompatActivity {
 
     final String TAG = this.getClass().getName();
@@ -89,7 +78,10 @@ public class PassengerMainActivity extends AppCompatActivity {
     @Override
     public void onBackPressed() {
 
-        Log.d(TAG, "Click");
+        PassengerLoginActivity pla = new PassengerLoginActivity();
+
+        //just for testing, nothing personal
+        Log.d(TAG, "token " + pla.getPassenToken());
 
         if (twice == true) {
 

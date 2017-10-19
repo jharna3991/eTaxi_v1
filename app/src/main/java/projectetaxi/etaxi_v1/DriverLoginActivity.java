@@ -10,8 +10,6 @@ import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.BasicNetwork;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
@@ -19,9 +17,33 @@ import org.json.JSONObject;
 
 public class DriverLoginActivity extends AppCompatActivity {
 
-    ApiToken token = new ApiToken();
-    URLRequest myEmail = new URLRequest();
-    //protected String apiToken;
+    private static String driToken;
+    private static String driName;
+    private static String driEmail;
+
+    public static String getDriToken() {
+        return driToken;
+    }
+
+    public static void setDriToken(String drivToken) {
+        DriverLoginActivity.driToken = drivToken;
+    }
+
+    public static String getDriName() {
+        return driName;
+    }
+
+    public static void setDriName(String driName) {
+        DriverLoginActivity.driName = driName;
+    }
+
+    public static String getDriEmail() {
+        return driEmail;
+    }
+
+    public static void setDriEmail(String driEmail) {
+        DriverLoginActivity.driEmail = driEmail;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,7 +61,6 @@ public class DriverLoginActivity extends AppCompatActivity {
             public void onClick(View view){
 
                 final String email = etDriverEmail.getText().toString();
-                myEmail.driverEmail = email;
 
                 final String password = etDriverPassword.getText().toString();
 
@@ -52,14 +73,14 @@ public class DriverLoginActivity extends AppCompatActivity {
                         try {
                             JSONObject jsonResponse = new JSONObject(response);
                             boolean success = jsonResponse.getBoolean("success");
-                            token.setDriverToken(jsonResponse.getString("api_token"));
+                            driToken = jsonResponse.getString("api_token");
+                            driName = jsonResponse.getString("name");
+                            driEmail = jsonResponse.getString("email");
 
                             if(success) {
 
                                 Intent intent = new Intent(DriverLoginActivity.this, DriverMainActivity.class);
                                 DriverLoginActivity.this.startActivity(intent);
-                                Toast.makeText(getApplicationContext(), token.getDriverToken(),
-                                        Toast.LENGTH_SHORT).show();
                             } else {
 
                                 Toast.makeText(getApplicationContext(), "Login Failed, try again",
