@@ -13,37 +13,33 @@
         android:text="Passenger Login"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@color/colorBlack"
+        android:textColor="@color/colorWhite"
         android:layout_gravity="center_horizontal"
         android:padding="10dp"
         android:id="@+id/tvPassengerLogin"
-        android:layout_marginTop="50dp" />
+        android:layout_marginTop="50dp"
+        android:layout_marginBottom="50dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:background="@color/colorBlack"/>
 
     <EditText
+        style="@style/edit_text_style"
         android:id="@+id/etPassengerEmail"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:backgroundTint="@color/colorBlack"
         android:drawableLeft="@drawable/email_icon"
-        android:drawablePadding="10dp"
         android:drawableStart="@drawable/email_icon"
-        android:ems="10"
         android:hint="email"
-        android:paddingLeft="20dp"
-        android:inputType="textEmailAddress"
-        android:layout_marginTop="30dp" />
+        android:inputType="textEmailAddress"/>
 
     <EditText
+        style="@style/edit_text_style"
         android:id="@+id/etPassengerPassword"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:drawableLeft="@drawable/password_icon"
-        android:drawablePadding="10dp"
         android:drawableStart="@drawable/password_icon"
-        android:ems="10"
         android:hint="password"
-        android:paddingLeft="20dp"
-        android:inputType="textPassword"
-        android:textColor="@color/colorBlack" />
+        android:backgroundTint="@color/colorBlack"
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/btPassengerLogin"

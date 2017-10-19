@@ -19,9 +19,9 @@ public class BookingRequest extends StringRequest {
     private static final String BOOKING_REQUEST_URL = URLRequest.bookingRequest;
     private Map<String, String> params;
 
-    public BookingRequest(String roadType, String driverEmail, String passengerEmail, double srcLat,
-                          double srcLong, double destLat, double destLong, String bookingStatus,
-                          double amount, Response.Listener<String>listener) {
+    public BookingRequest(String roadType, String driverEmail, String passengerEmail, String srcLat,
+                          String srcLong, String destLat, String destLong, String bookingStatus,
+                          String amount, Response.Listener<String>listener) {
         super(Method.POST, BOOKING_REQUEST_URL, listener, null);
 
         params = new HashMap<>();
@@ -42,15 +42,15 @@ public class BookingRequest extends StringRequest {
         return params;
     }
 
-    @Override
-    public Map<String, String> getHeaders() throws AuthFailureError {
-
-        Map<String, String> headers = new HashMap<>();
-
-        headers.put("Authorization", "Bearer " + token);
-
-        return headers;
-    }
+//    @Override
+//    public Map<String, String> getHeaders() throws AuthFailureError {
+//
+//        Map<String, String> headers = new HashMap<>();
+//
+//        headers.put("Authorization", "Bearer " + token);
+//
+//        return headers;
+//    }
 
    /* @Override
     public Map<String, String> getHeaders() {
