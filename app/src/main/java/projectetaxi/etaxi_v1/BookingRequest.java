@@ -13,15 +13,16 @@ import java.util.Map;
 
 public class BookingRequest extends StringRequest {
 
-    ApiToken apiToken = new ApiToken();
-    private String token = apiToken.getPassengerToken();
+    final String TAG = this.getClass().getName();
+
+    PassengerLoginActivity passenger = new PassengerLoginActivity();
 
     private static final String BOOKING_REQUEST_URL = URLRequest.bookingRequest;
     private Map<String, String> params;
 
-    public BookingRequest(String roadType, String driverEmail, String passengerEmail, double srcLat,
-                          double srcLong, double destLat, double destLong, String bookingStatus,
-                          double amount, Response.Listener<String>listener) {
+    public BookingRequest(String roadType, String driverEmail, String passengerEmail, String srcLat,
+                          String srcLong, String destLat, String destLong, String bookingStatus,
+                          String amount, Response.Listener<String>listener) {
         super(Method.POST, BOOKING_REQUEST_URL, listener, null);
 
         params = new HashMap<>();
@@ -45,18 +46,18 @@ public class BookingRequest extends StringRequest {
     @Override
     public Map<String, String> getHeaders() throws AuthFailureError {
 
-        Map<String, String> headers = new HashMap<>();
+        Map<String, String> params = new HashMap<>();
 
-        headers.put("Authorization", "Bearer " + token);
-
-        return headers;
-    }
-
-   /* @Override
-    public Map<String, String> getHeaders() {
-        params.put("Content-Type", "application/json");
+        //params.put("Content-Type", "application/json");
         params.put("Accept", "application/json");
+        params.put("Authorization", "Bearer " + passenger.getPassenToken());
 
         return params;
-    }*/
+    }
+
+//    @Override
+//    public Map<String, String> getHeaders() {
+//        params.put("Authorization", "Bearer " + token);
+//        return params;
+//    }
 }

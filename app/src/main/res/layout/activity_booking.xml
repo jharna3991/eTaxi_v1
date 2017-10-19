@@ -18,13 +18,13 @@
 
 
     <Button
-        style="@style/button_style_white"
         android:id="@+id/btNearbyDriver"
+        style="@style/button_style_white"
         android:layout_width="199dp"
         android:layout_height="wrap_content"
-        android:text="Near By Driver"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="20dp" />
+        android:layout_marginTop="20dp"
+        android:text="Near By Driver" />
 
 
     <Button

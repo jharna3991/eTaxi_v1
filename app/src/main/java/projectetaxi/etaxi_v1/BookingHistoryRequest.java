@@ -1,38 +1,32 @@
-package projectetaxi.etaxi_v1;
-
-import android.util.Log;
-
-import com.android.volley.AuthFailureError;
-import com.android.volley.Response;
-import com.android.volley.toolbox.StringRequest;
-
-import org.json.JSONObject;
-
-import java.util.HashMap;
-import java.util.Map;
-
-/**
- * Created by Ashim Bazracharya on 10/15/2017.
- */
-
-public class BookingHistoryRequest extends StringRequest {
-
-    ApiToken apiToken = new ApiToken();
-    private String token = apiToken.getPassengerToken();
-
-    private static final String URL = URLRequest.bookingHistoryRequest;
-
-    public BookingHistoryRequest(Response.Listener<String> listener) {
-        super(Method.GET, URL, listener, null);
-    }
-
-    @Override
-    public Map<String, String> getHeaders() throws AuthFailureError{
-
-        Map<String, String> headers = new HashMap<>();
-
-        headers.put("Authorization", "Bearer " + token);
-
-        return headers;
-    }
-}
+//package projectetaxi.etaxi_v1;
+//
+//import com.android.volley.AuthFailureError;
+//import com.android.volley.Response;
+//import com.android.volley.toolbox.StringRequest;
+//
+//import java.util.HashMap;
+//import java.util.Map;
+//
+///**
+// * Created by Ashim Bazracharya on 10/15/2017.
+// */
+//
+//public class BookingHistoryRequest extends StringRequest {
+//
+//
+//    private static final String URL = URLRequest.bookingHistoryRequest;
+//
+//    public BookingHistoryRequest(Response.Listener<String> listener) {
+//        super(Method.GET, URL, listener, null);
+//    }
+//
+//    @Override
+//    public Map<String, String> getHeaders() throws AuthFailureError{
+//
+//        Map<String, String> headers = new HashMap<>();
+//
+//        headers.put("Authorization", "Bearer " + token);
+//
+//        return headers;
+//    }
+//}

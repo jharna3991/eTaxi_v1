@@ -4,13 +4,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/colorPrimary"
+    android:orientation="vertical"
     tools:context="projectetaxi.etaxi_v1.PassengerRegisterActivity">
-
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
 
         <TextView
             android:id="@+id/textView2"
@@ -20,65 +15,57 @@
             android:layout_marginBottom="10dp"
             android:layout_marginTop="50dp"
             android:text="Passenger Registration"
-            android:textColor="@color/colorBlack"
+            android:textColor="@color/colorWhite"
             android:textSize="20sp"
-            android:textStyle="bold" />
+            android:textStyle="bold"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp"
+            android:background="@color/colorBlack"/>
 
-        <EditText
-            android:id="@+id/etPassengerName"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="30dp"
-            android:drawableLeft="@drawable/person_icon"
-            android:drawablePadding="10dp"
-            android:drawableStart="@drawable/person_icon"
-            android:ems="10"
-            android:hint="name"
-            android:inputType="textPersonName" />
+    <EditText
+        android:id="@+id/etPassengerName"
+        style="@style/edit_text_style"
+        android:backgroundTint="@color/colorBlack"
+        android:drawableLeft="@drawable/person_icon"
+        android:drawableStart="@drawable/person_icon"
+        android:hint="name"
+        android:inputType="textPersonName" />
 
-        <EditText
+    <EditText
+            style="@style/edit_text_style"
             android:id="@+id/etPassengerEmail"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:drawableLeft="@drawable/email_icon"
-            android:drawablePadding="10dp"
             android:drawableStart="@drawable/email_icon"
-            android:ems="10"
             android:hint="Email"
-            android:inputType="textEmailAddress" />
+            android:inputType="textEmailAddress"
+            android:backgroundTint="@color/colorBlack"/>
 
         <EditText
+            style="@style/edit_text_style"
             android:id="@+id/etPassengerPassword"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:drawableLeft="@drawable/password_icon"
-            android:drawablePadding="10dp"
             android:drawableStart="@drawable/password_icon"
-            android:ems="10"
             android:hint="Password"
+            android:backgroundTint="@color/colorBlack"
             android:inputType="textPassword" />
 
         <EditText
+            style="@style/edit_text_style"
             android:id="@+id/etPassengerMobileNum"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:drawableLeft="@drawable/mobile_icon"
-            android:drawablePadding="10dp"
             android:drawableStart="@drawable/mobile_icon"
-            android:ems="10"
             android:hint="Mobile Number"
-            android:inputType="text" />
+            android:inputType="text"
+            android:backgroundTint="@color/colorBlack"/>
 
         <EditText
+            style="@style/edit_text_style"
             android:id="@+id/etPassengerAddress"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
             android:drawableLeft="@drawable/address_icon"
-            android:drawablePadding="10dp"
             android:drawableStart="@drawable/address_icon"
-            android:ems="10"
             android:hint="Address"
-            android:inputType="text" />
+            android:inputType="text"
+            android:backgroundTint="@color/colorBlack"/>
 
         <Button
             android:id="@+id/btPassengerRegister"
@@ -88,7 +75,4 @@
             android:layout_gravity="center_horizontal"
             android:text="Register"
             android:textColor="@color/colorWhite" />
-
-
-    </LinearLayout>
 </LinearLayout>

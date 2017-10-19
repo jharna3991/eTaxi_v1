@@ -2,7 +2,7 @@ package projectetaxi.etaxi_v1;
 
 import android.content.Intent;
 import android.os.Bundle;
-//import android.support.v7.app.AlertDialog;
+import android.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
@@ -61,14 +61,11 @@ public class DriverRegisterActivity extends AppCompatActivity {
                                 DriverRegisterActivity.this.startActivity(intent);
                             } else {
 
-                                Toast.makeText(getApplicationContext(), "Register Failed, try again",
-                                        Toast.LENGTH_SHORT).show();
-
-//                                AlertDialog.Builder builder = new AlertDialog.Builder(DriverRegisterActivity.this);
-//                                builder.setMessage("Register Failed")
-//                                        .setNegativeButton("Try Again", null)
-//                                        .create()
-//                                        .show();
+                                AlertDialog.Builder builder = new AlertDialog.Builder(DriverRegisterActivity.this);
+                                builder.setMessage("Register Failed")
+                                        .setNegativeButton("Try Again", null)
+                                        .create()
+                                        .show();
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();

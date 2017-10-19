@@ -3,7 +3,6 @@ package projectetaxi.etaxi_v1;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -18,8 +17,33 @@ import org.json.JSONObject;
 
 public class PassengerLoginActivity extends AppCompatActivity {
 
-    ApiToken token = new ApiToken();
-    URLRequest myEmail = new URLRequest();
+    private static String passenToken;
+    private static String passenName;
+    private static String passenEmail;
+
+    public static String getPassenToken() {
+        return passenToken;
+    }
+
+    public static void setPassenToken(String passenToken) {
+        PassengerLoginActivity.passenToken = passenToken;
+    }
+
+    public static String getPassenName() {
+        return passenName;
+    }
+
+    public static void setPassenName(String passenName) {
+        PassengerLoginActivity.passenName = passenName;
+    }
+
+    public static String getPassenEmail() {
+        return passenEmail;
+    }
+
+    public static void setPassenEmail(String passenEmail) {
+        PassengerLoginActivity.passenEmail = passenEmail;
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +61,6 @@ public class PassengerLoginActivity extends AppCompatActivity {
             public void onClick(View view){
 
                 final String email = etPassengerEmail.getText().toString();
-                myEmail.passengerEmail = email;
 
                 final String password = etPassengerPassword.getText().toString();
 
@@ -50,13 +73,15 @@ public class PassengerLoginActivity extends AppCompatActivity {
                         try {
                             JSONObject jsonResponse = new JSONObject(response);
                             boolean success = jsonResponse.getBoolean("success");
-                            token.setPassengerToken(jsonResponse.getString("api_token"));
+                            passenToken = jsonResponse.getString("api_token");
+                            passenName = jsonResponse.getString("name");
+                            passenEmail = jsonResponse.getString("email");
 
                             if(success) {
 
                                 Intent intent = new Intent(PassengerLoginActivity.this, PassengerMainActivity.class);
                                 PassengerLoginActivity.this.startActivity(intent);
-                                Toast.makeText(getApplicationContext(), token.getPassengerToken(),
+                                Toast.makeText(getApplicationContext(), jsonResponse.getString("api_token"),
                                         Toast.LENGTH_SHORT).show();
                             } else {
 

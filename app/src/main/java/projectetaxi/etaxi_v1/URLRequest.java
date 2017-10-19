@@ -7,7 +7,7 @@ package projectetaxi.etaxi_v1;
 public class URLRequest {
 
     private static int num1 = 100;
-    private static int num2 = 11;
+    private static int num2 = 4;
 
     public static String passengerEmail = "bashirian.lila@example.org";
     public static String driverEmail;
