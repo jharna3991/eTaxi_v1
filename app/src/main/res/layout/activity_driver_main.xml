@@ -7,48 +7,55 @@
     tools:context="projectetaxi.etaxi_v1.DriverMainActivity">
 
     <TextView
+        android:textStyle="bold"
         android:id="@+id/tvDriName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginLeft="29dp"
+        android:textSize="30sp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="8dp"
+        android:text="Name"
+        android:layout_below="@+id/ibDriSetting"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginLeft="28dp"
-        android:textSize="16sp"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="22dp"
-        android:text="Name" />
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:id="@+id/tvDriEmail"
+        android:textStyle="bold"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
+        android:textSize="30sp"
         android:text="Email"
-        android:layout_below="@+id/ibDriSetting"
+        android:layout_marginTop="11dp"
+        android:layout_below="@+id/tvDriName"
         android:layout_alignLeft="@+id/tvDriName"
         android:layout_alignStart="@+id/tvDriName" />
 
 
     <Button
+        style="@style/button_style_black"
         android:id="@+id/btDriHistory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="History"
-        android:layout_alignBottom="@+id/swDriStatus"
+        android:layout_alignBottom="@+id/ibDriLogout"
         android:layout_alignLeft="@+id/tvDriEmail"
-        android:layout_alignStart="@+id/tvDriEmail" />
+        android:layout_alignStart="@+id/tvDriEmail"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginBottom="8dp" />
 
     <Button
+        style="@style/button_style_black"
         android:id="@+id/btAboutUs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
         android:text="About Us"
-        android:layout_alignTop="@+id/ibDriLogout"
-        android:layout_toLeftOf="@+id/ibDriLogout"
-        android:layout_toStartOf="@+id/ibDriLogout"
-        android:layout_marginRight="14dp"
-        android:layout_marginEnd="14dp" />
+        android:layout_above="@+id/ibDriLogout"
+        android:layout_alignRight="@+id/ibDriLogout"
+        android:layout_alignEnd="@+id/ibDriLogout"
+        android:layout_marginBottom="28dp" />
 
     <ImageButton
         android:id="@+id/ibDriLogout"
@@ -77,23 +84,25 @@
     <TextView
         android:id="@+id/tvDriStatus"
         android:layout_width="wrap_content"
-        android:textSize="16sp"
+        android:textSize="20sp"
+        android:textStyle="bold"
         android:layout_height="wrap_content"
         android:text="Status"
-        android:layout_alignRight="@+id/swDriStatus"
-        android:layout_alignEnd="@+id/swDriStatus"
-        android:layout_marginRight="42dp"
-        android:layout_marginEnd="42dp"
-        android:layout_above="@+id/swDriStatus" />
+        android:layout_marginRight="28dp"
+        android:layout_marginEnd="28dp"
+        android:layout_alignTop="@+id/swDriStatus"
+        android:layout_toLeftOf="@+id/swDriStatus"
+        android:layout_toStartOf="@+id/swDriStatus" />
 
     <Switch
         android:id="@+id/swDriStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBottom="@+id/btAboutUs"
+        android:layout_marginRight="22dp"
+        android:layout_marginEnd="22dp"
+        android:layout_alignBaseline="@+id/btDriHistory"
+        android:layout_alignBottom="@+id/btDriHistory"
         android:layout_toLeftOf="@+id/btAboutUs"
-        android:layout_toStartOf="@+id/btAboutUs"
-        android:layout_marginRight="14dp"
-        android:layout_marginEnd="14dp" />
+        android:layout_toStartOf="@+id/btAboutUs" />
 
 </RelativeLayout>

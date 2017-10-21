@@ -1,17 +1,113 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/colorPrimary"
     tools:context="projectetaxi.etaxi_v1.PassengerSettingActivity">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Passenger Setting"
+        android:text="PASSENGER SETTINGS"
+        android:textSize="20sp"
         android:textStyle="bold"
+        android:textColor="@color/colorPrimary"
         android:layout_gravity="center_horizontal"
-        android:textSize="30sp"/>
+        android:padding="10dp"
+        android:id="@+id/tvPassengerSetting"
+        android:layout_marginTop="53dp"
+        android:paddingLeft="5dp"
+        android:paddingRight="5dp"
+        android:background="@color/colorBlack"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true" />
 
-</LinearLayout>
+    <Button
+        android:id="@+id/btChgName"
+        style="@style/button_style_black"
+        android:textColor="@color/colorPrimary"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Change Name"
+        android:layout_marginTop="64dp"
+        android:layout_below="@+id/tvPassengerSetting"
+        android:layout_alignLeft="@+id/btChgMobileNum"
+        android:layout_alignStart="@+id/btChgMobileNum" />
+
+    <Button
+        android:id="@+id/btChgEmail"
+        style="@style/button_style_black"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Change Email"
+        android:textColor="@color/colorPrimary"
+        android:layout_alignBaseline="@+id/btChgName"
+        android:layout_alignBottom="@+id/btChgName"
+        android:layout_toRightOf="@+id/btChgName"
+        android:layout_toEndOf="@+id/btChgName"
+        android:layout_marginLeft="31dp"
+        android:layout_marginStart="31dp" />
+
+    <Button
+        android:id="@+id/btChgPassword"
+        style="@style/button_style_black"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Change Password"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginLeft="9dp"
+        android:layout_marginStart="9dp"
+        android:layout_marginTop="22dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:layout_below="@+id/btChgName"
+        android:layout_alignLeft="@+id/btOk"
+        android:layout_alignStart="@+id/btOk" />
+
+    <Button
+        android:id="@+id/btChgMobileNum"
+        style="@style/button_style_black"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Change Mobile Number"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginLeft="43dp"
+        android:layout_marginStart="43dp"
+        android:layout_marginTop="28dp"
+        android:layout_below="@+id/btChgPassword"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <Button
+        android:id="@+id/btChgAddress"
+        style="@style/button_style_black"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="Change Address"
+        android:textColor="@color/colorPrimary"
+        android:layout_alignTop="@+id/btChgMobileNum"
+        android:layout_alignLeft="@+id/btChgEmail"
+        android:layout_alignStart="@+id/btChgEmail"
+        android:layout_marginLeft="10dp"
+        android:layout_marginStart="10dp" />
+
+    <Button
+        android:id="@+id/btOk"
+        style="@style/button_style_black"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="OK"
+        android:textColor="@color/colorPrimary"
+        android:layout_marginTop="47dp"
+        android:layout_below="@+id/btChgMobileNum"
+        android:layout_centerHorizontal="true" />
+
+</RelativeLayout>

@@ -13,7 +13,7 @@ import java.util.Map;
 
 public class BookingRequest extends StringRequest {
 
-    final String TAG = this.getClass().getName();
+    //final String TAG = this.getClass().getName();
 
     PassengerLoginActivity passenger = new PassengerLoginActivity();
 

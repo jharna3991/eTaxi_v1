@@ -1,5 +1,6 @@
 package projectetaxi.etaxi_v1;
 
+import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
@@ -11,9 +12,18 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 public class PassengerMainActivity extends AppCompatActivity {
 
     final String TAG = this.getClass().getName();
+    PassengerLoginActivity passenger = new PassengerLoginActivity();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,6 +43,7 @@ public class PassengerMainActivity extends AppCompatActivity {
         btBookTaxi.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
+
                 Intent intent= new Intent(PassengerMainActivity.this, BookingActivity.class);
                 PassengerMainActivity.this.startActivity(intent);
             }
@@ -42,7 +53,9 @@ public class PassengerMainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View view){
-                Intent intent= new Intent(PassengerMainActivity.this, BookingHistoryActivity.class);
+
+                Intent intent= new Intent(PassengerMainActivity.this,
+                        BookingHistoryActivity.class);
                 PassengerMainActivity.this.startActivity(intent);
             }
         });
