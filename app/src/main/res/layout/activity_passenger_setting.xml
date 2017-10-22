@@ -92,11 +92,11 @@
         android:layout_gravity="center_horizontal"
         android:text="Change Address"
         android:textColor="@color/colorPrimary"
-        android:layout_alignTop="@+id/btChgMobileNum"
+        android:layout_marginLeft="11dp"
+        android:layout_marginStart="11dp"
+        android:layout_above="@+id/btOk"
         android:layout_alignLeft="@+id/btChgEmail"
-        android:layout_alignStart="@+id/btChgEmail"
-        android:layout_marginLeft="10dp"
-        android:layout_marginStart="10dp" />
+        android:layout_alignStart="@+id/btChgEmail" />
 
     <Button
         android:id="@+id/btOk"
