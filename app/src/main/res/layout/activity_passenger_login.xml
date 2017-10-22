@@ -10,10 +10,10 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Passenger Login"
+        android:text="PASSENGER LOGIN"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/colorPrimary"
         android:layout_gravity="center_horizontal"
         android:padding="10dp"
         android:id="@+id/tvPassengerLogin"
@@ -29,7 +29,7 @@
         android:backgroundTint="@color/colorBlack"
         android:drawableLeft="@drawable/email_icon"
         android:drawableStart="@drawable/email_icon"
-        android:hint="email"
+        android:hint="Email"
         android:inputType="textEmailAddress"/>
 
     <EditText
@@ -37,14 +37,14 @@
         android:id="@+id/etPassengerPassword"
         android:drawableLeft="@drawable/password_icon"
         android:drawableStart="@drawable/password_icon"
-        android:hint="password"
+        android:hint="Password"
         android:backgroundTint="@color/colorBlack"
         android:inputType="textPassword" />
 
     <Button
         android:id="@+id/btPassengerLogin"
         style="@style/button_style_black"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/colorPrimary"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
@@ -67,7 +67,7 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         style="@style/button_style_black"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/colorPrimary"
         android:text="Register"
         android:layout_gravity="center_horizontal" />
 

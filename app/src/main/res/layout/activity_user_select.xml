@@ -43,7 +43,7 @@
         android:textStyle="bold"
         android:textSize="20sp"
         android:textAlignment="center"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/colorPrimary"
         android:layout_marginTop="7dp"
         android:layout_below="@+id/ivDriverTitle"
         android:layout_alignParentLeft="true"

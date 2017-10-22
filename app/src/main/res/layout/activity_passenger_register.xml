@@ -12,14 +12,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="50dp"
             android:layout_marginTop="50dp"
-            android:text="Passenger Registration"
-            android:textColor="@color/colorWhite"
+            android:text="PASSENGER REGISTRATION"
+            android:textColor="@color/colorPrimary"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:paddingLeft="5dp"
-            android:paddingRight="5dp"
+            android:padding="10dp"
             android:background="@color/colorBlack"/>
 
     <EditText
@@ -28,7 +27,7 @@
         android:backgroundTint="@color/colorBlack"
         android:drawableLeft="@drawable/person_icon"
         android:drawableStart="@drawable/person_icon"
-        android:hint="name"
+        android:hint="Name"
         android:inputType="textPersonName" />
 
     <EditText
@@ -67,12 +66,13 @@
             android:inputType="text"
             android:backgroundTint="@color/colorBlack"/>
 
-        <Button
-            android:id="@+id/btPassengerRegister"
-            style="@style/button_style_black"
-            android:layout_width="127dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_horizontal"
-            android:text="Register"
-            android:textColor="@color/colorWhite" />
+    <Button
+        android:id="@+id/btPassengerRegister"
+        style="@style/button_style_black"
+        android:layout_width="127dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="25dp"
+        android:text="Register"
+        android:textColor="@color/colorPrimary" />
 </LinearLayout>

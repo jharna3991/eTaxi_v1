@@ -10,41 +10,47 @@
         android:id="@+id/tvPassName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
         android:layout_marginLeft="28dp"
-        android:textSize="16sp"
+        android:textSize="30sp"
+        android:textStyle="bold"
         android:layout_marginStart="28dp"
-        android:layout_marginTop="22dp"
-        android:text="Name" />
+        android:text="Name"
+        android:layout_below="@+id/ibPassSetting"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
     <TextView
         android:id="@+id/tvPassEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="16sp"
+        android:textSize="30sp"
+        android:textStyle="bold"
         android:text="Email"
-        android:layout_below="@+id/ibPassSetting"
+        android:layout_marginTop="13dp"
+        android:layout_below="@+id/tvPassName"
         android:layout_alignLeft="@+id/tvPassName"
         android:layout_alignStart="@+id/tvPassName" />
 
     <Button
+        style="@style/button_style_yellow"
+        android:textColor="@color/colorBlack"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:textStyle="bold"
         android:id="@+id/btBookTaxi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Book a Taxi"
-        android:layout_marginBottom="16dp"
-        android:layout_marginRight="9dp"
-        android:layout_marginEnd="9dp"
+        android:layout_marginBottom="23dp"
         android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/btAboutUs"
-        android:layout_toStartOf="@+id/btAboutUs" />
+        android:layout_centerHorizontal="true" />
 
     <Button
+        style="@style/button_style_black"
         android:id="@+id/btPassHistory"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:textColor="@color/colorPrimary"
         android:text="History"
         android:layout_alignBaseline="@+id/btBookTaxi"
         android:layout_alignBottom="@+id/btBookTaxi"
@@ -52,26 +58,27 @@
         android:layout_alignStart="@+id/tvPassEmail" />
 
     <Button
+        style="@style/button_style_black"
+        android:textColor="@color/colorPrimary"
         android:id="@+id/btAboutUs"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="About Us"
-        android:layout_alignBottom="@+id/ibPassLogout"
-        android:layout_toLeftOf="@+id/ibPassLogout"
-        android:layout_toStartOf="@+id/ibPassLogout"
-        android:layout_marginRight="8dp"
-        android:layout_marginEnd="8dp" />
+        android:layout_marginBottom="20dp"
+        android:layout_above="@+id/btBookTaxi"
+        android:layout_alignRight="@+id/ibPassLogout"
+        android:layout_alignEnd="@+id/ibPassLogout" />
 
     <ImageButton
         android:id="@+id/ibPassLogout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/logout_icon"
+        android:layout_marginRight="35dp"
+        android:layout_marginEnd="35dp"
         android:layout_alignBottom="@+id/btBookTaxi"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="18dp"
-        android:layout_marginEnd="18dp" />
+        android:layout_alignParentEnd="true" />
 
     <ImageButton
         android:id="@+id/ibPassSetting"
@@ -80,6 +87,9 @@
         app:srcCompat="@drawable/setting_icon"
         android:layout_alignParentTop="true"
         android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="17dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginTop="9dp" />
 
 </RelativeLayout>

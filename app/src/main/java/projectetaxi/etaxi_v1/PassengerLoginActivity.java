@@ -3,6 +3,7 @@ package projectetaxi.etaxi_v1;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,6 +17,8 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 public class PassengerLoginActivity extends AppCompatActivity {
+
+    final String TAG = this.getClass().getName();
 
     private static String passenToken;
     private static String passenName;
@@ -85,6 +88,8 @@ public class PassengerLoginActivity extends AppCompatActivity {
                                         Toast.LENGTH_SHORT).show();
                             } else {
 
+                                Log.d(TAG, "$$$$$$$$$$$$$$$$$$$IAm Here");
+
                                 Toast.makeText(getApplicationContext(), "Login Failed, try again",
                                         Toast.LENGTH_SHORT).show();
 
@@ -97,6 +102,7 @@ public class PassengerLoginActivity extends AppCompatActivity {
                         } catch (JSONException e) {
                             e.printStackTrace();
                         }
+
                     }
                 };
 

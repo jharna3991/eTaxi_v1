@@ -25,8 +25,8 @@ public class DriverLoginActivity extends AppCompatActivity {
         return driToken;
     }
 
-    public static void setDriToken(String drivToken) {
-        DriverLoginActivity.driToken = drivToken;
+    public static void setDriToken(String driToken) {
+        DriverLoginActivity.driToken = driToken;
     }
 
     public static String getDriName() {

@@ -13,25 +13,26 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:layout_margin="50dp"
-        android:layout_marginBottom="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginBottom="50dp"
+        android:layout_marginTop="50dp"
         android:paddingLeft="5dp"
         android:paddingRight="5dp"
         android:background="@color/colorBlack"
-        android:text="Driver Registration"
-        android:textColor="@color/colorWhite"
+        android:text="DRIVE REGISTRATION"
+        android:padding="10dp"
+        android:textColor="@color/colorPrimary"
         android:textSize="20sp"
         android:textStyle="bold" />
 
     <EditText
-        style="@style/edit_text_style"
         android:id="@+id/etDriverName"
+        style="@style/edit_text_style"
+        android:backgroundTint="@color/colorBlack"
         android:drawableLeft="@drawable/person_icon"
         android:drawableStart="@drawable/person_icon"
         android:hint="Name"
         android:inputType="textPersonName"
-        android:textColor="@color/colorBlack"
-        android:backgroundTint="@color/colorBlack"/>
+        android:textColor="@color/colorBlack" />
 
     <EditText
         style="@style/edit_text_style"
@@ -100,5 +101,6 @@
         style="@style/button_style_black"
         android:layout_gravity="center_horizontal"
         android:text="Register"
-        android:textColor="@color/colorWhite"/>
+        android:layout_marginTop="50dp"
+        android:textColor="@color/colorPrimary"/>
 </LinearLayout>
