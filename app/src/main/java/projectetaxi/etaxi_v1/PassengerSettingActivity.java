@@ -1,5 +1,6 @@
 package projectetaxi.etaxi_v1;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -53,6 +54,10 @@ public class PassengerSettingActivity extends AppCompatActivity {
                                 passenger.setPassenName(name);
                                 Toast.makeText(getApplicationContext(), "Name Changed Successfully.",
                                         Toast.LENGTH_SHORT).show();
+
+                                Intent intent = new Intent(PassengerSettingActivity.this,
+                                        PassengerMainActivity.class);
+                                PassengerSettingActivity.this.startActivity(intent);
 
                             } else {
 
@@ -111,6 +116,9 @@ public class PassengerSettingActivity extends AppCompatActivity {
                                 Toast.makeText(getApplicationContext(),
                                         "Password Changed.",
                                         Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(PassengerSettingActivity.this,
+                                        PassengerMainActivity.class);
+                                PassengerSettingActivity.this.startActivity(intent);
 
                             } else {
 

@@ -100,6 +100,8 @@
         android:layout_height="wrap_content"
         android:layout_marginRight="22dp"
         android:layout_marginEnd="22dp"
+        android:textOff="Busy"
+        android:textOn="Free"
         android:layout_alignBaseline="@+id/btDriHistory"
         android:layout_alignBottom="@+id/btDriHistory"
         android:layout_toLeftOf="@+id/btAboutUs"

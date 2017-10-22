@@ -16,6 +16,7 @@ import android.widget.Toast;
 public class DriverMainActivity extends AppCompatActivity {
 
     final String TAG = this.getClass().getName();
+    DriverLoginActivity driver = new DriverLoginActivity();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +31,9 @@ public class DriverMainActivity extends AppCompatActivity {
         final ImageButton ibDriLogout = (ImageButton) findViewById(R.id.ibDriLogout);
         final ImageButton ibDriSetting = (ImageButton) findViewById(R.id.ibDriSetting);
         final Switch swSriStatus = (Switch) findViewById(R.id.swDriStatus);
+
+        tvDriEmail.setText(driver.getDriEmail());
+        tvDriName.setText(driver.getDriName());
 
         btDriHistory.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -50,7 +54,7 @@ public class DriverMainActivity extends AppCompatActivity {
         ibDriLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
-                Intent intent= new Intent(DriverMainActivity.this, DriverLogoutActivity.class);
+                Intent intent= new Intent(DriverMainActivity.this, UserSelectActivity.class);
                 DriverMainActivity.this.startActivity(intent);
             }
         });

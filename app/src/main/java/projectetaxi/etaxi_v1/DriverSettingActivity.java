@@ -1,5 +1,6 @@
 package projectetaxi.etaxi_v1;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -47,8 +48,14 @@ public class DriverSettingActivity extends AppCompatActivity {
 
                             if(success) {
 
+                                driver.setDriName(name);
+
                                 Toast.makeText(getApplicationContext(), "Name Changed.",
                                         Toast.LENGTH_SHORT).show();
+
+                                Intent intent = new Intent(DriverSettingActivity.this,
+                                        DriverMainActivity.class);
+                                DriverSettingActivity.this.startActivity(intent);
 
                             } else {
 
@@ -104,8 +111,15 @@ public class DriverSettingActivity extends AppCompatActivity {
 
                             if(success) {
 
+                                driver.setDriPassword(password);
+
                                 Toast.makeText(getApplicationContext(), "Password Changed.",
                                         Toast.LENGTH_SHORT).show();
+
+                                Intent intent = new Intent(DriverSettingActivity.this,
+                                        DriverMainActivity.class);
+                                DriverSettingActivity.this.startActivity(intent);
+
 
                             } else {
 
