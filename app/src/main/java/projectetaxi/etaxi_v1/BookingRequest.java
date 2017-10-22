@@ -29,12 +29,12 @@ public class BookingRequest extends StringRequest {
         params.put("roadType", roadType);
         params.put("driverEmail", driverEmail);
         params.put("passengerEmail", passengerEmail);
-        params.put("sourceLatitude", srcLat + "");
-        params.put("sourceLongitude", srcLong + "");
-        params.put("destinationLatitude", destLat + "");
-        params.put("destinationLongitude", destLong + "");
+        params.put("sourceLatitude", srcLat);
+        params.put("sourceLongitude", srcLong );
+        params.put("destinationLatitude", destLat);
+        params.put("destinationLongitude", destLong);
         params.put("status", bookingStatus);
-        params.put("amount", amount + "");
+        params.put("amount", amount);
     }
 
     @Override

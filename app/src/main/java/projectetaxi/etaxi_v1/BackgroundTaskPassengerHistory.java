@@ -68,9 +68,7 @@ public class BackgroundTaskPassengerHistory {
                             } catch (JSONException e) {
                                 e.printStackTrace();
                             }
-
                         }
-
                     }
                 }, new Response.ErrorListener() {
             @Override

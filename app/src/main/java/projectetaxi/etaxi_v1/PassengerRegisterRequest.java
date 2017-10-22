@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class PassengerRegisterRequest extends StringRequest {
 
-    private static final String REGISTER_REQUEST_URL = URLRequest.passengerRegisterRequest;
+    private static final String REGISTER_REQUEST_URL = URLRequest.passengerRequest;
     private Map<String, String> params;
 
     public PassengerRegisterRequest(String name, String email, String password, String mobileNum,

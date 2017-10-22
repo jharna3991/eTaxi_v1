@@ -52,7 +52,7 @@
         <activity android:name=".PassengerLogoutActivity" />
         <activity android:name=".ServedHistoryActivity" />
         <activity android:name=".DriverLogoutActivity" />
-        <activity android:name=".DriverSettingActivity"></activity>
+        <activity android:name=".DriverSettingActivity" />
     </application>
 
 </manifest>

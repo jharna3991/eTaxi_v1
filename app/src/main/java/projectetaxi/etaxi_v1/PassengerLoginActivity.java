@@ -23,6 +23,9 @@ public class PassengerLoginActivity extends AppCompatActivity {
     private static String passenToken;
     private static String passenName;
     private static String passenEmail;
+    private static String passenPassword;
+    private static String passenAddress;
+    private static String passenMobileNum;
 
     public static String getPassenToken() {
         return passenToken;
@@ -46,6 +49,30 @@ public class PassengerLoginActivity extends AppCompatActivity {
 
     public static void setPassenEmail(String passenEmail) {
         PassengerLoginActivity.passenEmail = passenEmail;
+    }
+
+    public static String getPassenPassword() {
+        return passenPassword;
+    }
+
+    public static void setPassenPassword(String passenPassword) {
+        PassengerLoginActivity.passenPassword = passenPassword;
+    }
+
+    public static String getPassenAddress() {
+        return passenAddress;
+    }
+
+    public static void setPassenAddress(String passenAddress) {
+        PassengerLoginActivity.passenAddress = passenAddress;
+    }
+
+    public static String getPassenMobileNum() {
+        return passenMobileNum;
+    }
+
+    public static void setPassenMobileNum(String passenMobileNum) {
+        PassengerLoginActivity.passenMobileNum = passenMobileNum;
     }
 
     @Override
@@ -79,6 +106,8 @@ public class PassengerLoginActivity extends AppCompatActivity {
                             passenToken = jsonResponse.getString("api_token");
                             passenName = jsonResponse.getString("name");
                             passenEmail = jsonResponse.getString("email");
+                            passenAddress = jsonResponse.getString("address");
+                            passenMobileNum = jsonResponse.getString("mobileNumber");
 
                             if(success) {
 
@@ -86,18 +115,13 @@ public class PassengerLoginActivity extends AppCompatActivity {
                                 PassengerLoginActivity.this.startActivity(intent);
                                 Toast.makeText(getApplicationContext(), jsonResponse.getString("api_token"),
                                         Toast.LENGTH_SHORT).show();
+                                passenPassword = password;
                             } else {
 
                                 Log.d(TAG, "$$$$$$$$$$$$$$$$$$$IAm Here");
 
                                 Toast.makeText(getApplicationContext(), "Login Failed, try again",
                                         Toast.LENGTH_SHORT).show();
-
-//                                AlertDialog.Builder builder = new AlertDialog.Builder(DriverRegisterActivity.this);
-//                                builder.setMessage("Register Failed")
-//                                        .setNegativeButton("Try Again", null)
-//                                        .create()
-//                                        .show();
                             }
                         } catch (JSONException e) {
                             e.printStackTrace();
