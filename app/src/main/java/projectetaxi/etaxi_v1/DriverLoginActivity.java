@@ -20,6 +20,11 @@ public class DriverLoginActivity extends AppCompatActivity {
     private static String driToken;
     private static String driName;
     private static String driEmail;
+    private static String driPassword;
+    private static String driMobileNum;
+    private static String driTaxiNum;
+    private static String driLicNum;
+    private static String driAddress;
 
     public static String getDriToken() {
         return driToken;
@@ -43,6 +48,46 @@ public class DriverLoginActivity extends AppCompatActivity {
 
     public static void setDriEmail(String driEmail) {
         DriverLoginActivity.driEmail = driEmail;
+    }
+
+    public static String getDriPassword() {
+        return driPassword;
+    }
+
+    public static void setDriPassword(String driPassword) {
+        DriverLoginActivity.driPassword = driPassword;
+    }
+
+    public static String getDriMobileNum() {
+        return driMobileNum;
+    }
+
+    public static void setDriMobileNum(String driMobileNum) {
+        DriverLoginActivity.driMobileNum = driMobileNum;
+    }
+
+    public static String getDriTaxiNum() {
+        return driTaxiNum;
+    }
+
+    public static void setDriTaxiNum(String driTaxiNum) {
+        DriverLoginActivity.driTaxiNum = driTaxiNum;
+    }
+
+    public static String getDriLicNum() {
+        return driLicNum;
+    }
+
+    public static void setDriLicNum(String driLicNum) {
+        DriverLoginActivity.driLicNum = driLicNum;
+    }
+
+    public static String getDriAddress() {
+        return driAddress;
+    }
+
+    public static void setDriAddress(String driAddress) {
+        DriverLoginActivity.driAddress = driAddress;
     }
 
     @Override
@@ -76,9 +121,13 @@ public class DriverLoginActivity extends AppCompatActivity {
                             driToken = jsonResponse.getString("api_token");
                             driName = jsonResponse.getString("name");
                             driEmail = jsonResponse.getString("email");
+                            driTaxiNum = jsonResponse.getString("taxiNumber");
+                            driLicNum = jsonResponse.getString("licenseNumber");
+                            driAddress = jsonResponse.getString("address");
 
                             if(success) {
 
+                                driPassword = password;
                                 Intent intent = new Intent(DriverLoginActivity.this, DriverMainActivity.class);
                                 DriverLoginActivity.this.startActivity(intent);
                             } else {

@@ -12,7 +12,7 @@ import java.util.Map;
 
 public class DriverRegisterRequest extends StringRequest {
 
-    private static final String REGISTER_REQUEST_URL = URLRequest.driverRegisterRequest;
+    private static final String REGISTER_REQUEST_URL = URLRequest.driverRequest;
     private Map<String, String> params;
 
     public DriverRegisterRequest(String name, String email, String password, String mobileNum,
