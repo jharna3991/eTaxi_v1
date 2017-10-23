@@ -26,6 +26,8 @@ public class PassengerLoginActivity extends AppCompatActivity {
     private static String passenPassword;
     private static String passenAddress;
     private static String passenMobileNum;
+    private static String currentLat;
+    private static String currentLong;
 
     public static String getPassenToken() {
         return passenToken;
@@ -73,6 +75,22 @@ public class PassengerLoginActivity extends AppCompatActivity {
 
     public static void setPassenMobileNum(String passenMobileNum) {
         PassengerLoginActivity.passenMobileNum = passenMobileNum;
+    }
+
+    public static String getCurrentLat() {
+        return currentLat;
+    }
+
+    public static void setCurrentLat(String currentLat) {
+        PassengerLoginActivity.currentLat = currentLat;
+    }
+
+    public static String getCurrentLong() {
+        return currentLong;
+    }
+
+    public static void setCurrentLong(String currentLong) {
+        PassengerLoginActivity.currentLong = currentLong;
     }
 
     @Override

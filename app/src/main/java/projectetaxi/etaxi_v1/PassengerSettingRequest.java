@@ -24,8 +24,15 @@ public class PassengerSettingRequest extends StringRequest{
             passenger.getPassenEmail();
     private Map<String, String> params;
 
-    public PassengerSettingRequest(String name, String email, String password, String mobileNum,
-                          String address, Response.Listener<String>listener) {
+    public PassengerSettingRequest(
+            String name,
+            String email,
+            String password,
+            String mobileNum,
+            String address,
+            String currentLat,
+            String currentLong,
+            Response.Listener<String>listener) {
         super(Method.PUT, PASSENGER_SETTING_URL, listener, null);
 
         Log.d(TAG, PASSENGER_SETTING_URL);
@@ -36,6 +43,8 @@ public class PassengerSettingRequest extends StringRequest{
         params.put("password", password);
         params.put("mobileNumber", mobileNum);
         params.put("address", address);
+        params.put("latitude", currentLat);
+        params.put("longitude", currentLong);
     }
 
     @Override
