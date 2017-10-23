@@ -34,15 +34,23 @@ import com.google.android.gms.maps.model.MarkerOptions;
 import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
-public class DestinationSelectionActivity extends FragmentActivity implements OnMapReadyCallback,
+
+
+public class DestinationSelectionActivity extends FragmentActivity implements
+        OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
-        LocationListener, GoogleMap.OnMarkerClickListener, GoogleMap.OnMapClickListener, GoogleMap.OnMapLongClickListener {
+        LocationListener, GoogleMap.OnMarkerClickListener,
+        GoogleMap.OnMapClickListener,
+        GoogleMap.OnMapLongClickListener {
+
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
+
     GoogleApiClient mGoogleApiClient;
     Location mLastLocation;
     Marker mCurrLocationMarker, marker;
     LocationRequest mLocationRequest;
+
     private GoogleMap mMap;
     TextView tvLocInfo;
 
@@ -51,6 +59,7 @@ public class DestinationSelectionActivity extends FragmentActivity implements On
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_destination_selection);
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
@@ -61,29 +70,37 @@ public class DestinationSelectionActivity extends FragmentActivity implements On
                         .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
     }
+
+
     @Override
     public void onMapReady(GoogleMap googleMap) {
+
         mMap = googleMap;
         //mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-//Initialize Google Play Services
+        //Initialize Google Play Services
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (ContextCompat.checkSelfPermission(this,
                     Manifest.permission.ACCESS_FINE_LOCATION)
                     == PackageManager.PERMISSION_GRANTED) {
                 buildGoogleApiClient();
                 mMap.setMyLocationEnabled(true);
+
+                Log.d(TAG, "Set Location----> "+mMap);
             }
         } else {
             buildGoogleApiClient();
             mMap.setMyLocationEnabled(true);
         }
 
-//        mMap.setOnMapClickListener(this);
+    //  mMap.setOnMapClickListener(this);
         mMap.setOnMapLongClickListener(this);
+        Log.d(TAG, "Set Long Click Location----> "+mMap);
 
         // Set a listener for marker click.
         mMap.setOnMarkerClickListener(this);
+        Log.d(TAG, "Set On Marker Click Location----> "+mMap);
     }
+
     protected synchronized void buildGoogleApiClient() {
         mGoogleApiClient = new GoogleApiClient.Builder(this)
                 .addConnectionCallbacks(this)
@@ -100,44 +117,75 @@ public class DestinationSelectionActivity extends FragmentActivity implements On
         mLocationRequest.setInterval(1000);
         mLocationRequest.setFastestInterval(1000);
         mLocationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
+
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_FINE_LOCATION)
                 == PackageManager.PERMISSION_GRANTED) {
             LocationServices.FusedLocationApi.requestLocationUpdates(mGoogleApiClient,
                     mLocationRequest, this);
+
+            Log.d(TAG, "Requested Location----> "+mLocationRequest);
         }
     }
+
+
+
     @Override
     public void onConnectionSuspended(int i) {
     }
+
+
+
     @Override
     public void onLocationChanged(Location location) {
+
+        Log.d(TAG, "Changed Location -----> " + location);
+
         mLastLocation = location;
         if (mCurrLocationMarker != null) {
+
+            Log.d(TAG, "If mLastLocation: " + mLastLocation + " = " + " location: " + location);
             mCurrLocationMarker.remove();
         }
-//Showing Current Location Marker on Map
-        LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
+
+
+        //Showing Current Location Marker on Map
+        LatLng latLng = new LatLng(
+                location.getLatitude(),
+                location.getLongitude());
+
+        Log.d(TAG, "Current Location----> " + latLng);
+
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
+
         LocationManager locationManager = (LocationManager)
                 getSystemService(Context.LOCATION_SERVICE);
+
         String provider = locationManager.getBestProvider(new Criteria(), true);
+
         if (ActivityCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
                 ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION)
                         != PackageManager.PERMISSION_GRANTED) {
-// TODO: Consider calling
-// ActivityCompat#requestPermissions
-// here to request the missing permissions, and then overriding
-// public void onRequestPermissionsResult(int requestCode, String[]permissions,
-// int[] grantResults)
-// to handle the case where the user grants the permission. See the documentation
-// for ActivityCompat#requestPermissions for more details.
+
+    // TODO: Consider calling
+    // ActivityCompat#requestPermissions
+    // here to request the missing permissions, and then overriding
+    // public void onRequestPermissionsResult(int requestCode, String[]permissions,
+    // int[] grantResults)
+    // to handle the case where the user grants the permission. See the documentation
+    // for ActivityCompat#requestPermissions for more details.
             return;
         }
+
+
         Location locations = locationManager.getLastKnownLocation(provider);
         List<String> providerList = locationManager.getAllProviders();
+
+        Log.d(TAG, "Locations----> "+ locations);
+
+
         if (null != locations && null != providerList && providerList.size() > 0) {
             double longitude = locations.getLongitude();
             double latitude = locations.getLatitude();
@@ -146,33 +194,41 @@ public class DestinationSelectionActivity extends FragmentActivity implements On
             try {
                 List<Address> listAddresses = geocoder.getFromLocation(latitude,
                         longitude, 1);
+
                 if (null != listAddresses && listAddresses.size() > 0) {
-// Here we are finding , whatever we want our marker to show when clicked
+            // Here we are finding , whatever we want our marker to show when clicked
                     String state = listAddresses.get(0).getAdminArea();
                     String country = listAddresses.get(0).getCountryName();
                     String subLocality = listAddresses.get(0).getSubLocality();
                     markerOptions.title("" + latLng + "," + subLocality + "," + state
                             + "," + country);
                 }
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
         }
+
         markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));
         mCurrLocationMarker = mMap.addMarker(markerOptions);
 
-//move map camera
+    //move map camera
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(11));
-//this code stops location updates
+
+    //this code stops location updates
         if (mGoogleApiClient != null) {
             LocationServices.FusedLocationApi.removeLocationUpdates(mGoogleApiClient,
                     this);
         }
     }
+
+
     @Override
     public void onConnectionFailed(ConnectionResult connectionResult) {
     }
+
+
     public boolean checkLocationPermission() {
         if (ContextCompat.checkSelfPermission(this,
                 Manifest.permission.ACCESS_FINE_LOCATION)
@@ -198,6 +254,8 @@ public class DestinationSelectionActivity extends FragmentActivity implements On
             return true;
         }
     }
+
+
     @Override
     public void onRequestPermissionsResult(int requestCode,
                                            String permissions[], int[] grantResults) {
@@ -225,8 +283,14 @@ public class DestinationSelectionActivity extends FragmentActivity implements On
         }
     }
 
+
     @Override
     public boolean onMarkerClick(final Marker marker) {
+
+//        if(mCurrLocationMarker!=null){
+//            mCurrLocationMarker.remove();
+//        }
+
         // Retrieve the data from the marker.
         Integer clickCount = (Integer) marker.getTag();
 
@@ -234,6 +298,9 @@ public class DestinationSelectionActivity extends FragmentActivity implements On
         if (clickCount != null) {
             clickCount = clickCount + 1;
             marker.setTag(clickCount);
+
+            Log.d(TAG, "---Toast---");
+
             Toast.makeText(this,
                     marker.getTitle() +
                             " has been clicked " + clickCount + " times.",
@@ -246,11 +313,6 @@ public class DestinationSelectionActivity extends FragmentActivity implements On
         return false;
     }
 
-//    @Override
-//    public void onMapClick(LatLng latLng) {
-//        tvLocInfo.setText(latLng.toString());
-//        mMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
-//    }
 
 
     @Override
@@ -258,10 +320,15 @@ public class DestinationSelectionActivity extends FragmentActivity implements On
         if(marker!=null){
             marker.remove();
 
-            Log.d(TAG, "" + latLng);
+            Log.d(TAG, "Long Clicked latlng: " + latLng);
         }
-        mMap.addMarker(new MarkerOptions().position(latLng).title(latLng.toString()));
+
+
+
+        marker= mMap.addMarker(new MarkerOptions().position(latLng).title(latLng.toString()));
     }
+
+
 
     @Override
     public void onMapClick(LatLng latLng) {
