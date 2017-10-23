@@ -18,7 +18,10 @@ import org.json.JSONObject;
 
 public class PassengerLoginActivity extends AppCompatActivity {
 
+    BookingData booking = new BookingData();
+
     final String TAG = this.getClass().getName();
+    static PassengerMainActivity passenger = new PassengerMainActivity();
 
     private static String passenToken;
     private static String passenName;
@@ -26,15 +29,11 @@ public class PassengerLoginActivity extends AppCompatActivity {
     private static String passenPassword;
     private static String passenAddress;
     private static String passenMobileNum;
-    private static String currentLat;
-    private static String currentLong;
+    //private static String currentLat = passenger.getPassengerCurrentLat();
+    //private static String currentLong = passenger.getPassengerCurrentLng();
 
     public static String getPassenToken() {
         return passenToken;
-    }
-
-    public static void setPassenToken(String passenToken) {
-        PassengerLoginActivity.passenToken = passenToken;
     }
 
     public static String getPassenName() {
@@ -43,14 +42,6 @@ public class PassengerLoginActivity extends AppCompatActivity {
 
     public static void setPassenName(String passenName) {
         PassengerLoginActivity.passenName = passenName;
-    }
-
-    public static String getPassenEmail() {
-        return passenEmail;
-    }
-
-    public static void setPassenEmail(String passenEmail) {
-        PassengerLoginActivity.passenEmail = passenEmail;
     }
 
     public static String getPassenPassword() {
@@ -65,32 +56,20 @@ public class PassengerLoginActivity extends AppCompatActivity {
         return passenAddress;
     }
 
-    public static void setPassenAddress(String passenAddress) {
-        PassengerLoginActivity.passenAddress = passenAddress;
-    }
-
     public static String getPassenMobileNum() {
         return passenMobileNum;
     }
 
-    public static void setPassenMobileNum(String passenMobileNum) {
-        PassengerLoginActivity.passenMobileNum = passenMobileNum;
-    }
+//    public static String getCurrentLat() {
+//        return currentLat;
+//    }
+//
+//    public static String getCurrentLong() {
+//        return currentLong;
+//    }
 
-    public static String getCurrentLat() {
-        return currentLat;
-    }
-
-    public static void setCurrentLat(String currentLat) {
-        PassengerLoginActivity.currentLat = currentLat;
-    }
-
-    public static String getCurrentLong() {
-        return currentLong;
-    }
-
-    public static void setCurrentLong(String currentLong) {
-        PassengerLoginActivity.currentLong = currentLong;
+    public static String getPassenEmail() {
+        return passenEmail;
     }
 
     @Override
@@ -155,10 +134,14 @@ public class PassengerLoginActivity extends AppCompatActivity {
 
         });
 
+        booking.setPassengerEmail(passenEmail);
 
         btPassengerRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
+
+                Log.d(TAG, "Passenger Email: " + booking.getPassengerEmail());
+
                 Intent loginIntent= new Intent(PassengerLoginActivity.this, PassengerRegisterActivity.class);
                 PassengerLoginActivity.this.startActivity(loginIntent);
             }

@@ -1,5 +1,7 @@
 package projectetaxi.etaxi_v1;
 
+import android.*;
+import android.Manifest;
 import android.content.Context;
 import android.content.Intent;
 import android.content.pm.PackageManager;
@@ -41,12 +43,26 @@ import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
-public class PassengerMainActivity extends AppCompatActivity implements OnMapReadyCallback,
+public class PassengerMainActivity extends AppCompatActivity implements
+        OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
         LocationListener {
 
+    private static String passengerCurrentLat;
+    private static String passengerCurrentLng;
+
+    public static String getPassengerCurrentLat() {
+        return passengerCurrentLat;
+    }
+
+
+    public static String getPassengerCurrentLng() {
+        return passengerCurrentLng;
+    }
+
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
+
     GoogleApiClient mGoogleApiClient;
     Location mLastLocation;
     Marker mCurrLocationMarker;
@@ -54,7 +70,6 @@ public class PassengerMainActivity extends AppCompatActivity implements OnMapRea
     private GoogleMap mMap;
 
     final String TAG = this.getClass().getName();
-    PassengerLoginActivity passenger = new PassengerLoginActivity();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -67,6 +82,7 @@ public class PassengerMainActivity extends AppCompatActivity implements OnMapRea
                 getSupportFragmentManager()
                         .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
 
 //        FontChangeCrawler fontChanger = new FontChangeCrawler(getAssets(), "font.otf");
 //        fontChanger.replaceFonts((ViewGroup)this.findViewById(android.R.id.content));
@@ -156,6 +172,7 @@ public class PassengerMainActivity extends AppCompatActivity implements OnMapRea
 
     }
 
+
     boolean twice = false;
     @Override
     public void onBackPressed() {
@@ -179,7 +196,11 @@ public class PassengerMainActivity extends AppCompatActivity implements OnMapRea
 
         Log.d(TAG, "After Click Before Toast" + twice);
 
-        Toast.makeText(PassengerMainActivity.this, "Press Back Again to EXIT", Toast.LENGTH_SHORT).show();
+        Toast.makeText(
+                PassengerMainActivity.this,
+                "Press Back Again to EXIT",
+                Toast.LENGTH_SHORT).show();
+
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
@@ -216,17 +237,32 @@ public class PassengerMainActivity extends AppCompatActivity implements OnMapRea
 
     @Override
     public void onLocationChanged(Location location) {
+
         mLastLocation = location;
+
         if (mCurrLocationMarker != null) {
             mCurrLocationMarker.remove();
         }
-//Showing Current Location Marker on Map
-        LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
+
+        //Showing Current Location Marker on Map
+        LatLng latLng = new LatLng(
+                location.getLatitude(),
+                location.getLongitude()
+        );
+
+
+        passengerCurrentLat = String.valueOf(location.getLatitude());
+        passengerCurrentLng = String.valueOf(location.getLongitude());
+
+
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
+
         LocationManager locationManager = (LocationManager)
                 getSystemService(Context.LOCATION_SERVICE);
+
         String provider = locationManager.getBestProvider(new Criteria(), true);
+
         if (ActivityCompat.checkSelfPermission(this,
                 android.Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED &&
                 ActivityCompat.checkSelfPermission(this, android.Manifest.permission.ACCESS_COARSE_LOCATION)
@@ -240,13 +276,18 @@ public class PassengerMainActivity extends AppCompatActivity implements OnMapRea
 // for ActivityCompat#requestPermissions for more details.
             return;
         }
+
         Location locations = locationManager.getLastKnownLocation(provider);
+
         List<String> providerList = locationManager.getAllProviders();
+
         if (null != locations && null != providerList && providerList.size() > 0) {
+
             double longitude = locations.getLongitude();
             double latitude = locations.getLatitude();
             Geocoder geocoder = new Geocoder(getApplicationContext(),
                     Locale.getDefault());
+
             try {
                 List<Address> listAddresses = geocoder.getFromLocation(latitude,
                         longitude, 1);
@@ -258,6 +299,7 @@ public class PassengerMainActivity extends AppCompatActivity implements OnMapRea
                     markerOptions.title("" + latLng + "," + subLocality + "," + state
                             + "," + country);
                 }
+
             } catch (IOException e) {
                 e.printStackTrace();
             }
@@ -265,10 +307,11 @@ public class PassengerMainActivity extends AppCompatActivity implements OnMapRea
         markerOptions.icon(BitmapDescriptorFactory.defaultMarker(BitmapDescriptorFactory.HUE_MAGENTA));
         mCurrLocationMarker = mMap.addMarker(markerOptions);
 
-//move map camera
+         //move map camera
         mMap.moveCamera(CameraUpdateFactory.newLatLng(latLng));
         mMap.animateCamera(CameraUpdateFactory.zoomTo(11));
-//this code stops location updates
+        //this code stops location updates
+
         if (mGoogleApiClient != null) {
             LocationServices.FusedLocationApi.removeLocationUpdates(mGoogleApiClient,
                     this);
@@ -277,9 +320,11 @@ public class PassengerMainActivity extends AppCompatActivity implements OnMapRea
 
     @Override
     public void onMapReady(GoogleMap googleMap) {
+
         mMap = googleMap;
+
         //mMap.setMapType(GoogleMap.MAP_TYPE_HYBRID);
-//Initialize Google Play Services
+        //Initialize Google Play Services
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             if (ContextCompat.checkSelfPermission(this,
                     android.Manifest.permission.ACCESS_FINE_LOCATION)

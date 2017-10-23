@@ -47,6 +47,17 @@ public class DriverMainActivity extends AppCompatActivity implements OnMapReadyC
         GoogleApiClient.OnConnectionFailedListener,
         LocationListener, GoogleMap.OnMarkerClickListener {
 
+    private static String driverCurrentLat;
+    private static String driverCurrentLng;
+
+    public static String getDriverCurrentLat() {
+        return driverCurrentLat;
+    }
+
+    public static String getDriverCurrentLng() {
+        return driverCurrentLng;
+    }
+
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
     GoogleApiClient mGoogleApiClient;
     Location mLastLocation;
@@ -225,12 +236,22 @@ public class DriverMainActivity extends AppCompatActivity implements OnMapReadyC
 
     @Override
     public void onLocationChanged(Location location) {
+
         mLastLocation = location;
+
         if (mCurrLocationMarker != null) {
             mCurrLocationMarker.remove();
         }
+
 //Showing Current Location Marker on Map
-        LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
+        LatLng latLng = new LatLng(
+                location.getLatitude(),
+                location.getLongitude()
+        );
+
+        driverCurrentLat = String.valueOf(location.getLatitude());
+        driverCurrentLng = String.valueOf(location.getLongitude());
+
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
         LocationManager locationManager = (LocationManager)

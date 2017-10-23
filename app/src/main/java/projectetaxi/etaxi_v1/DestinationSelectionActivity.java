@@ -2,6 +2,7 @@ package projectetaxi.etaxi_v1;
 
 import android.Manifest;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Criteria;
@@ -14,6 +15,8 @@ import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
 import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -44,14 +47,35 @@ public class DestinationSelectionActivity extends FragmentActivity implements
         GoogleMap.OnMapClickListener,
         GoogleMap.OnMapLongClickListener {
 
+    private static String currentLat;
+    private static String currentLng;
+    private static String destinationLat;
+    private static String destinationLng;
+
+    public static String getCurrentLat() {
+        return currentLat;
+    }
+
+    public static String getCurrentLng() {
+        return currentLng;
+    }
+
+    public static String getDestinationLat() {
+        return destinationLat;
+    }
+
+    public static String getDestinationLng() {
+        return destinationLng;
+    }
+
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
 
     GoogleApiClient mGoogleApiClient;
     Location mLastLocation;
     Marker mCurrLocationMarker, marker;
     LocationRequest mLocationRequest;
-
     private GoogleMap mMap;
+
     TextView tvLocInfo;
 
     final String TAG = this.getClass().getName();
@@ -152,9 +176,20 @@ public class DestinationSelectionActivity extends FragmentActivity implements
         //Showing Current Location Marker on Map
         LatLng latLng = new LatLng(
                 location.getLatitude(),
-                location.getLongitude());
+                location.getLongitude()
+        );
+
 
         Log.d(TAG, "Current Location----> " + latLng);
+        Log.d(TAG, "Current Latitude----> " + location.getLatitude());
+        Log.d(TAG, "Current Longitude----> " + location.getLongitude());
+
+        currentLat = String.valueOf(location.getLatitude());
+        currentLng = String.valueOf(location.getLongitude());
+
+
+        Log.d(TAG, "Passenger Current Longitude----> " + location.getLatitude());
+        Log.d(TAG, "Passenger Current Longitude----> " + location.getLongitude());
 
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
@@ -317,11 +352,43 @@ public class DestinationSelectionActivity extends FragmentActivity implements
 
     @Override
     public void onMapLongClick(LatLng latLng) {
+
+        Log.d(TAG, "--------Long Clicked lat before if statement: " + latLng.latitude);
+        Log.d(TAG, "--------Long Clicked lng before if statement: " + latLng.longitude);
+
+        final String lat = String.valueOf(latLng.latitude);
+        final String lng = String.valueOf(latLng.longitude);
+
+        Log.d(TAG, "Long Clicked latlng: " + latLng);
+
         if(marker!=null){
             marker.remove();
 
-            Log.d(TAG, "Long Clicked latlng: " + latLng);
+            Log.d(TAG, "--------After if statement, Long Clicked lat: " + latLng.latitude);
+            Log.d(TAG, "--------After if statement, Long Clicked latlng: " + latLng.longitude);
+            Log.d(TAG, "After if stmt, Long Clicked latlng: " + latLng);
         }
+
+        final Button btSelectDestination = (Button) findViewById(R.id.btSelectDest);
+
+        btSelectDestination.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view){
+
+                destinationLat = lat;
+                destinationLng = lng;
+
+                Intent intent= new Intent(DestinationSelectionActivity.this, BookingActivity.class);
+                DestinationSelectionActivity.this.startActivity(intent);
+
+                Log.d(TAG, "/////Src Lat: " + currentLat);
+                Log.d(TAG, "/////Src Lng: " + currentLng);
+                Log.d(TAG, "/////Dest Lat: " + destinationLat);
+                Log.d(TAG, "/////Dest Lng: " + destinationLng);
+
+
+            }
+        });
 
 
 
@@ -333,5 +400,10 @@ public class DestinationSelectionActivity extends FragmentActivity implements
     @Override
     public void onMapClick(LatLng latLng) {
         mMap.animateCamera(CameraUpdateFactory.newLatLng(latLng));
+
+        Log.d(TAG, "/////--Src Lat: " + currentLat);
+        Log.d(TAG, "/////--Src Lng: " + currentLng);
+        Log.d(TAG, "/////--Dest Lat: " + destinationLat);
+        Log.d(TAG, "/////--Dest Lng: " + destinationLng);
     }
 }
