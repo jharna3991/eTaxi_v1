@@ -78,6 +78,9 @@ public class DriverSettingActivity extends AppCompatActivity {
                         "" + driver.getDriTaxiNum(),
                         "" + driver.getDriLicNum(),
                         "" + driver.getDriAddress(),
+                        "" + driver.getCurrentLat(),
+                        "" + driver.getCurrentLong(),
+                        "" + driver.getStatus(),
                         responseListener
                 );
 
@@ -142,6 +145,9 @@ public class DriverSettingActivity extends AppCompatActivity {
                         "" + driver.getDriTaxiNum(),
                         "" + driver.getDriLicNum(),
                         "" + driver.getDriAddress(),
+                        "" + driver.getCurrentLat(),
+                        "" + driver.getCurrentLong(),
+                        "" + driver.getStatus(),
                         responseListener
                 );
 

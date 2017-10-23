@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.Switch;
 import android.widget.TextView;
@@ -23,6 +24,8 @@ public class DriverMainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_driver_main);
 
+        final Switch statusSwitch = (Switch) findViewById(R.id.swDriStatus);
+
         final TextView tvDriName = (TextView) findViewById(R.id.tvDriName);
         final TextView tvDriEmail = (TextView) findViewById(R.id.tvDriEmail);
         final TextView tvDriStatus = (TextView) findViewById(R.id.tvDriStatus);
@@ -30,7 +33,30 @@ public class DriverMainActivity extends AppCompatActivity {
         final Button btAboutUs = (Button) findViewById(R.id.btAboutUs);
         final ImageButton ibDriLogout = (ImageButton) findViewById(R.id.ibDriLogout);
         final ImageButton ibDriSetting = (ImageButton) findViewById(R.id.ibDriSetting);
-        final Switch swSriStatus = (Switch) findViewById(R.id.swDriStatus);
+
+        statusSwitch.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+
+                if(isChecked) {
+
+                    Toast.makeText(
+                            DriverMainActivity.this,
+                            "Driver is Free",
+                            Toast.LENGTH_SHORT).show();
+                    tvDriStatus.setText("FREE");
+                    tvDriStatus.setTextColor(getResources().getColor(R.color.green));
+                } else {
+                    Toast.makeText(
+                            DriverMainActivity.this,
+                            "Driver is Busy",
+                            Toast.LENGTH_SHORT).show();
+                    tvDriStatus.setText("BUSY");
+                    tvDriStatus.setTextColor(getResources().getColor(R.color.red));
+
+                }
+            }
+        });
 
         tvDriEmail.setText(driver.getDriEmail());
         tvDriName.setText(driver.getDriName());
@@ -43,13 +69,13 @@ public class DriverMainActivity extends AppCompatActivity {
             }
         });
 
-        btAboutUs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view){
-                Intent intent= new Intent(DriverMainActivity.this, AboutUs.class);
-                DriverMainActivity.this.startActivity(intent);
-            }
-        });
+//        btAboutUs.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view){
+//                Intent intent= new Intent(DriverMainActivity.this, AboutUs.class);
+//                DriverMainActivity.this.startActivity(intent);
+//            }
+//        });
 
         ibDriLogout.setOnClickListener(new View.OnClickListener() {
             @Override

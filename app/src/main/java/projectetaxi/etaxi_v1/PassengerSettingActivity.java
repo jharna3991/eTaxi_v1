@@ -78,6 +78,8 @@ public class PassengerSettingActivity extends AppCompatActivity {
                         "" + passenger.getPassenPassword(),
                         "" + passenger.getPassenMobileNum(),
                         "" + passenger.getPassenAddress(),
+                        "" + passenger.getCurrentLat(),
+                        "" + passenger.getCurrentLong(),
                         responseListener
                 );
 
@@ -139,6 +141,8 @@ public class PassengerSettingActivity extends AppCompatActivity {
                         password,
                         "" + passenger.getPassenMobileNum(),
                         "" + passenger.getPassenAddress(),
+                        "" + passenger.getCurrentLat(),
+                        "" + passenger.getCurrentLong(),
                         responseListener);
                 RequestQueue queue = Volley.newRequestQueue(PassengerSettingActivity.this);
                 queue.add(request);
