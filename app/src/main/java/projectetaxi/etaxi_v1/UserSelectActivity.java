@@ -1,12 +1,14 @@
 package projectetaxi.etaxi_v1;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.Toast;
 
 public class UserSelectActivity extends AppCompatActivity {
@@ -18,6 +20,8 @@ public class UserSelectActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_user_select);
 
+        final ImageView ivDriver = (ImageView) findViewById(R.id.ivDriverTitle);
+        final ImageView ivPassenger = (ImageView) findViewById(R.id.ivPassengerTitle);
 
         final Button btDriver = (Button) findViewById(R.id.btDriver);
         final Button btPassenger = (Button) findViewById(R.id.btPassenger);
@@ -31,6 +35,23 @@ public class UserSelectActivity extends AppCompatActivity {
         });
 
         btDriver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent loginIntent = new Intent(UserSelectActivity.this, DriverLoginActivity.class);
+                UserSelectActivity.this.startActivity(loginIntent);
+            }
+        });
+
+
+        ivPassenger.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view){
+                Intent loginIntent = new Intent(UserSelectActivity.this, PassengerLoginActivity.class);
+                UserSelectActivity.this.startActivity(loginIntent);
+            }
+        });
+
+        ivDriver.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent loginIntent = new Intent(UserSelectActivity.this, DriverLoginActivity.class);

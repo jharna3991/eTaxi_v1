@@ -13,53 +13,56 @@
         android:name="com.google.android.gms.maps.SupportMapFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context="projectetaxi.examplemaps.MapsActivity" />
-
-
-    <TextView
-        android:background="@color/colorPrimary"
-        android:paddingRight="10dp"
-        android:paddingLeft="10dp"
-        android:textStyle="bold"
-        android:id="@+id/tvDriName"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginLeft="29dp"
-        android:textSize="30sp"
-        android:layout_marginStart="29dp"
-        android:layout_marginTop="8dp"
-        android:text="Name"
-        android:layout_below="@+id/ibDriSetting"
+        tools:context="projectetaxi.examplemaps.MapsActivity"
+        android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 
-    <TextView
-        android:background="@color/colorPrimary"
-        android:paddingRight="10dp"
-        android:paddingLeft="10dp"
-        android:id="@+id/tvDriEmail"
-        android:textStyle="bold"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textSize="30sp"
-        android:text="Email"
-        android:layout_marginTop="11dp"
-        android:layout_below="@+id/tvDriName"
-        android:layout_alignLeft="@+id/tvDriName"
-        android:layout_alignStart="@+id/tvDriName" />
+
+    <!--<TextView-->
+        <!--android:background="@color/colorPrimary"-->
+        <!--android:paddingRight="10dp"-->
+        <!--android:paddingLeft="10dp"-->
+        <!--android:textStyle="bold"-->
+        <!--android:id="@+id/tvDriName"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textSize="30sp"-->
+        <!--android:text="Name"-->
+        <!--android:layout_alignTop="@+id/ibDriSetting"-->
+        <!--android:layout_toLeftOf="@+id/tvDriStatus"-->
+        <!--android:layout_toStartOf="@+id/tvDriStatus"-->
+        <!--android:layout_marginRight="11dp"-->
+        <!--android:layout_marginEnd="11dp" />-->
+
+    <!--<TextView-->
+        <!--android:background="@color/colorPrimary"-->
+        <!--android:paddingRight="10dp"-->
+        <!--android:paddingLeft="10dp"-->
+        <!--android:id="@+id/tvDriEmail"-->
+        <!--android:textStyle="bold"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textSize="30sp"-->
+        <!--android:text="Email"-->
+        <!--android:layout_marginTop="11dp"-->
+        <!--android:layout_below="@+id/tvDriName"-->
+        <!--android:layout_alignLeft="@+id/tvDriName"-->
+        <!--android:layout_alignStart="@+id/tvDriName" />-->
 
 
-    <Button
-        style="@style/button_style_black"
-        android:id="@+id/btDriHistory"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="History"
-        android:layout_alignBottom="@+id/ibDriLogout"
-        android:layout_alignLeft="@+id/tvDriEmail"
-        android:layout_alignStart="@+id/tvDriEmail"
-        android:textColor="@color/colorPrimary"
-        android:layout_marginBottom="8dp" />
+    <!--<Button-->
+        <!--style="@style/button_style_yellow"-->
+        <!--android:id="@+id/btDriHistory"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textStyle="bold"-->
+        <!--android:text="History"-->
+        <!--android:textColor="@color/colorBlack"-->
+        <!--android:layout_marginBottom="11dp"-->
+        <!--android:layout_above="@+id/ibDriLogout"-->
+        <!--android:layout_alignRight="@+id/ibDriLogout"-->
+        <!--android:layout_alignEnd="@+id/ibDriLogout" />-->
 
     <!--<Button-->
         <!--style="@style/button_style_black"-->
@@ -92,25 +95,25 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/setting_icon"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_marginRight="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginTop="12dp" />
+        android:layout_marginBottom="56dp"
+        android:layout_above="@+id/ibDriLogout"
+        android:layout_alignLeft="@+id/ibDriLogout"
+        android:layout_alignStart="@+id/ibDriLogout" />
 
     <TextView
         android:id="@+id/tvDriStatus"
         android:layout_width="wrap_content"
-        android:textSize="20sp"
+        android:textSize="30sp"
         android:textStyle="bold"
         android:layout_height="wrap_content"
         android:text="Status"
-        android:layout_marginRight="28dp"
-        android:layout_marginEnd="28dp"
-        android:layout_alignTop="@+id/swDriStatus"
-        android:layout_toLeftOf="@+id/swDriStatus"
-        android:layout_toStartOf="@+id/swDriStatus" />
+        android:background="@drawable/dark_background_button"
+        android:paddingRight="70dp"
+        android:paddingLeft="20dp"
+        android:paddingTop="15dp"
+        android:paddingBottom="15dp"
+        android:layout_above="@+id/ibDriLogout"
+        android:layout_centerHorizontal="true" />
 
     <Switch
         android:id="@+id/swDriStatus"
@@ -118,11 +121,11 @@
         android:layout_height="wrap_content"
         android:textOff="Busy"
         android:textOn="Free"
-        android:layout_marginRight="69dp"
-        android:layout_marginEnd="69dp"
-        android:layout_above="@+id/btDriHistory"
-        android:layout_toLeftOf="@+id/ibDriLogout"
-        android:layout_toStartOf="@+id/ibDriLogout"
-        android:layout_marginBottom="52dp" />
+        android:layout_marginRight="21dp"
+        android:layout_marginEnd="21dp"
+        android:layout_alignTop="@+id/tvDriStatus"
+        android:layout_alignRight="@+id/tvDriStatus"
+        android:layout_alignEnd="@+id/tvDriStatus"
+        android:layout_marginTop="19dp" />
 
 </RelativeLayout>

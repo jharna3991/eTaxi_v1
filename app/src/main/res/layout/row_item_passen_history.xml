@@ -13,7 +13,7 @@
         android:layout_height="wrap_content"
         android:paddingLeft="20dp"
         android:text="Date"
-        android:textColor="@color/colorBlack"
+        android:textColor="@color/colorBlackFade"
         android:textSize="20sp" />
 
     <TextView
@@ -23,16 +23,16 @@
         android:text="Source Latitude"
         android:paddingLeft="20dp"
         android:textSize="20sp"
-        android:textColor="@color/colorBlack" />
+        android:textColor="@color/colorBlackFade" />
 
     <TextView
         android:id="@+id/tvSourceLongitude"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Source Longitude"
         android:paddingLeft="20dp"
-        android:textSize="20sp"
-        android:textColor="@color/colorBlack" />
+        android:text="Source Longitude"
+        android:textColor="@color/colorBlackFade"
+        android:textSize="20sp" />
 
     <TextView
         android:id="@+id/tvDestinationLatitude"
@@ -40,7 +40,7 @@
         android:layout_height="wrap_content"
         android:paddingLeft="20dp"
         android:text="DestinationLatitude"
-        android:textColor="@color/colorBlack"
+        android:textColor="@color/colorBlackFade"
         android:textSize="20sp" />
 
     <TextView
@@ -50,7 +50,7 @@
         android:text="DestinationLongitude"
         android:paddingLeft="20dp"
         android:textSize="20sp"
-        android:textColor="@color/colorBlack" />
+        android:textColor="@color/colorBlackFade" />
 
     <TextView
         android:id="@+id/tvPassAmount"
@@ -58,7 +58,7 @@
         android:layout_height="wrap_content"
         android:paddingLeft="20dp"
         android:text="Amount"
-        android:textColor="@color/colorBlack"
+        android:textColor="@color/colorBlackFade"
         android:textSize="20sp" />
 
 </LinearLayout>

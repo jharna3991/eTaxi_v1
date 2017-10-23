@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/colorPrimary"
+    android:background="@color/colorBackground"
     android:orientation="vertical"
     tools:context="projectetaxi.etaxi_v1.PassengerRegisterActivity">
 
@@ -14,17 +14,17 @@
             android:layout_gravity="center_horizontal"
             android:layout_marginBottom="50dp"
             android:layout_marginTop="50dp"
-            android:text="PASSENGER REGISTRATION"
-            android:textColor="@color/colorPrimary"
+            android:text="REGISTRATION"
+            android:textColor="@color/colorBlackFade"
             android:textSize="20sp"
             android:textStyle="bold"
-            android:padding="10dp"
-            android:background="@color/colorBlack"/>
+            android:padding="15dp"
+            android:background="@drawable/yellow_button"/>
 
     <EditText
         android:id="@+id/etPassengerName"
         style="@style/edit_text_style"
-        android:backgroundTint="@color/colorBlack"
+        android:backgroundTint="@color/colorBlackFade"
         android:drawableLeft="@drawable/person_icon"
         android:drawableStart="@drawable/person_icon"
         android:hint="Name"
@@ -37,7 +37,7 @@
             android:drawableStart="@drawable/email_icon"
             android:hint="Email"
             android:inputType="textEmailAddress"
-            android:backgroundTint="@color/colorBlack"/>
+            android:backgroundTint="@color/colorBlackFade"/>
 
         <EditText
             style="@style/edit_text_style"
@@ -45,7 +45,7 @@
             android:drawableLeft="@drawable/password_icon"
             android:drawableStart="@drawable/password_icon"
             android:hint="Password"
-            android:backgroundTint="@color/colorBlack"
+            android:backgroundTint="@color/colorBlackFade"
             android:inputType="textPassword" />
 
         <EditText
@@ -55,7 +55,7 @@
             android:drawableStart="@drawable/mobile_icon"
             android:hint="Mobile Number"
             android:inputType="text"
-            android:backgroundTint="@color/colorBlack"/>
+            android:backgroundTint="@color/colorBlackFade"/>
 
         <EditText
             style="@style/edit_text_style"
@@ -64,7 +64,7 @@
             android:drawableStart="@drawable/address_icon"
             android:hint="Address"
             android:inputType="text"
-            android:backgroundTint="@color/colorBlack"/>
+            android:backgroundTint="@color/colorBlackFade"/>
 
     <Button
         android:id="@+id/btPassengerRegister"
@@ -74,5 +74,6 @@
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="25dp"
         android:text="Register"
+        android:textStyle="bold"
         android:textColor="@color/colorPrimary" />
 </LinearLayout>
