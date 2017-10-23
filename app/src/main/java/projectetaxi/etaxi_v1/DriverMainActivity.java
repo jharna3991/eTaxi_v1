@@ -72,11 +72,11 @@ public class DriverMainActivity extends AppCompatActivity implements OnMapReadyC
 
         final Switch statusSwitch = (Switch) findViewById(R.id.swDriStatus);
 
-        final TextView tvDriName = (TextView) findViewById(R.id.tvDriName);
-        final TextView tvDriEmail = (TextView) findViewById(R.id.tvDriEmail);
+//        final TextView tvDriName = (TextView) findViewById(R.id.tvDriName);
+//        final TextView tvDriEmail = (TextView) findViewById(R.id.tvDriEmail);
         final TextView tvDriStatus = (TextView) findViewById(R.id.tvDriStatus);
-        final Button btDriHistory = (Button) findViewById(R.id.btDriHistory);
-        final Button btAboutUs = (Button) findViewById(R.id.btAboutUs);
+//        final Button btDriHistory = (Button) findViewById(R.id.btDriHistory);
+//        final Button btAboutUs = (Button) findViewById(R.id.btAboutUs);
         final ImageButton ibDriLogout = (ImageButton) findViewById(R.id.ibDriLogout);
         final ImageButton ibDriSetting = (ImageButton) findViewById(R.id.ibDriSetting);
 
@@ -86,17 +86,17 @@ public class DriverMainActivity extends AppCompatActivity implements OnMapReadyC
 
                 if(isChecked) {
 
-                    Toast.makeText(
-                            DriverMainActivity.this,
-                            "Driver is Free",
-                            Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(
+//                            DriverMainActivity.this,
+//                            "Driver is Free",
+//                            Toast.LENGTH_SHORT).show();
                     tvDriStatus.setText("FREE");
                     tvDriStatus.setTextColor(getResources().getColor(R.color.green));
                 } else {
-                    Toast.makeText(
-                            DriverMainActivity.this,
-                            "Driver is Busy",
-                            Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(
+//                            DriverMainActivity.this,
+//                            "Driver is Busy",
+//                            Toast.LENGTH_SHORT).show();
                     tvDriStatus.setText("BUSY");
                     tvDriStatus.setTextColor(getResources().getColor(R.color.red));
 
@@ -104,16 +104,16 @@ public class DriverMainActivity extends AppCompatActivity implements OnMapReadyC
             }
         });
 
-        tvDriEmail.setText(driver.getDriEmail());
-        tvDriName.setText(driver.getDriName());
+//        tvDriEmail.setText(driver.getDriEmail());
+//        tvDriName.setText(driver.getDriName());
 
-        btDriHistory.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view){
-                Intent intent= new Intent(DriverMainActivity.this, ServedHistoryActivity.class);
-                DriverMainActivity.this.startActivity(intent);
-            }
-        });
+//        btDriHistory.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view){
+//                Intent intent= new Intent(DriverMainActivity.this, ServedHistoryActivity.class);
+//                DriverMainActivity.this.startActivity(intent);
+//            }
+//        });
 
 //        btAboutUs.setOnClickListener(new View.OnClickListener() {
 //            @Override

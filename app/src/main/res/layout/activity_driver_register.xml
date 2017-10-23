@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/colorPrimary"
+    android:background="@color/colorBackground"
     tools:context="projectetaxi.etaxi_v1.PassengerRegisterActivity">
 
     <TextView
@@ -15,24 +15,22 @@
         android:layout_margin="50dp"
         android:layout_marginBottom="50dp"
         android:layout_marginTop="50dp"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
-        android:background="@color/colorBlack"
-        android:text="DRIVE REGISTRATION"
-        android:padding="10dp"
-        android:textColor="@color/colorPrimary"
+        android:background="@drawable/yellow_button"
+        android:text="REGISTRATION"
+        android:padding="15dp"
+        android:textColor="@color/colorBlackFade"
         android:textSize="20sp"
         android:textStyle="bold" />
 
     <EditText
         android:id="@+id/etDriverName"
         style="@style/edit_text_style"
-        android:backgroundTint="@color/colorBlack"
+        android:backgroundTint="@color/colorBlackFade"
         android:drawableLeft="@drawable/person_icon"
         android:drawableStart="@drawable/person_icon"
         android:hint="Name"
         android:inputType="textPersonName"
-        android:textColor="@color/colorBlack" />
+        android:textColor="@color/colorBlackFade" />
 
     <EditText
         style="@style/edit_text_style"
@@ -41,8 +39,8 @@
         android:drawableStart="@drawable/email_icon"
         android:hint="Email"
         android:inputType="textWebEmailAddress"
-        android:textColor="@color/colorBlack"
-        android:backgroundTint="@color/colorBlack"/>
+        android:textColor="@color/colorBlackFade"
+        android:backgroundTint="@color/colorBlackFade"/>
 
     <EditText
         style="@style/edit_text_style"
@@ -51,8 +49,8 @@
         android:drawableStart="@drawable/password_icon"
         android:hint="Password"
         android:inputType="textPassword"
-        android:textColor="@color/colorBlack"
-        android:backgroundTint="@color/colorBlack"/>
+        android:textColor="@color/colorBlackFade"
+        android:backgroundTint="@color/colorBlackFade"/>
 
     <EditText
         style="@style/edit_text_style"
@@ -61,8 +59,8 @@
         android:drawableStart="@drawable/mobile_icon"
         android:hint="Mobile Number"
         android:inputType="text"
-        android:textColor="@color/colorBlack"
-        android:backgroundTint="@color/colorBlack"/>
+        android:textColor="@color/colorBlackFade"
+        android:backgroundTint="@color/colorBlackFade"/>
 
     <EditText
         style="@style/edit_text_style"
@@ -71,8 +69,8 @@
         android:drawableStart="@drawable/license_icon"
         android:hint="License no."
         android:inputType="text"
-        android:textColor="@color/colorBlack"
-        android:backgroundTint="@color/colorBlack"/>
+        android:textColor="@color/colorBlackFade"
+        android:backgroundTint="@color/colorBlackFade"/>
 
     <EditText
         style="@style/edit_text_style"
@@ -81,8 +79,8 @@
         android:drawableStart="@drawable/taxi_icon"
         android:hint="Taxi no."
         android:inputType="text"
-        android:textColor="@color/colorBlack"
-        android:backgroundTint="@color/colorBlack"/>
+        android:textColor="@color/colorBlackFade"
+        android:backgroundTint="@color/colorBlackFade"/>
 
     <EditText
         style="@style/edit_text_style"
@@ -91,8 +89,8 @@
         android:drawableStart="@drawable/address_icon"
         android:hint="Address"
         android:inputType="text"
-        android:textColor="@color/colorBlack"
-        android:backgroundTint="@color/colorBlack"/>
+        android:textColor="@color/colorBlackFade"
+        android:backgroundTint="@color/colorBlackFade"/>
 
     <Button
         android:id="@+id/btDriverRegister"
@@ -101,6 +99,7 @@
         style="@style/button_style_black"
         android:layout_gravity="center_horizontal"
         android:text="Register"
+        android:textStyle="bold"
         android:layout_marginTop="50dp"
         android:textColor="@color/colorPrimary"/>
 </LinearLayout>

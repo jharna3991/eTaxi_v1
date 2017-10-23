@@ -5,7 +5,7 @@
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
-        <item name="colorAccent">@color/colorAccent</item>
+        <item name="colorAccent">@color/colorAccentBlack</item>
     </style>
 
     <style name="AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
@@ -16,6 +16,7 @@
         <item name="android:background">@drawable/black_button</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">40dp</item>
+        <item name="android:color">@color/colorBlackFade</item>
     </style>
     <style name="button_style_yellow">
         <item name="android:background">@drawable/yellow_button</item>
@@ -29,6 +30,13 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">40dp</item>
         <item name="android:color">@color/colorPrimary</item>
+    </style>
+
+    <style name="button_style_green">
+        <item name="android:background">@drawable/green_button</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">40dp</item>
+        <item name="android:color">@color/green</item>
     </style>
 
     <style name="linearLayout_style">
@@ -47,7 +55,7 @@
         <item name="android:drawablePadding">10dp</item>
         <item name="android:ems">10</item>
         <item name="android:paddingLeft">20dp</item>
-        <item name="android:textColor">@color/colorBlack</item>
+        <item name="android:textColor">@color/colorBlackFade</item>
     </style>
 
     <style name="imageViewBackground_style">

@@ -7,7 +7,7 @@ package projectetaxi.etaxi_v1;
 public class BookingData {
 
     public String roadType = "City Road";
-    public String driverEmail = "Asmitaa@susmita.com";
+    public String driverEmail = "xxx@xxx.com";
     public String passengerEmail = "ram@ram.com";
     public String srcLat = "87.901891";
     public String srcLong = "87.901891";

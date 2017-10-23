@@ -17,6 +17,7 @@ import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
@@ -67,16 +68,19 @@ public class PassengerMainActivity extends AppCompatActivity implements OnMapRea
                         .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
 
-        final TextView tvPassName = (TextView) findViewById(R.id.tvPassName);
-        final TextView tvPassEmail = (TextView) findViewById(R.id.tvPassEmail);
+//        FontChangeCrawler fontChanger = new FontChangeCrawler(getAssets(), "font.otf");
+//        fontChanger.replaceFonts((ViewGroup)this.findViewById(android.R.id.content));
+//
+//        final TextView tvPassName = (TextView) findViewById(R.id.tvPassName);
+//        final TextView tvPassEmail = (TextView) findViewById(R.id.tvPassEmail);
         final Button btBookTaxi = (Button) findViewById(R.id.btBookTaxi);
         final Button btPassHistory = (Button) findViewById(R.id.btPassHistory);
-        final Button btAboutUs = (Button) findViewById(R.id.btAboutUs);
+//        final Button btAboutUs = (Button) findViewById(R.id.btAboutUs);
         final ImageButton ibPassSetting = (ImageButton) findViewById(R.id.ibPassSetting);
         final ImageButton ibPassLogout = (ImageButton) findViewById(R.id.ibPassLogout);
 
-        tvPassEmail.setText(passenger.getPassenEmail());
-        tvPassName.setText(passenger.getPassenName());
+//        tvPassEmail.setText(passenger.getPassenEmail());
+//        tvPassName.setText(passenger.getPassenName());
 
         btBookTaxi.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,13 +102,13 @@ public class PassengerMainActivity extends AppCompatActivity implements OnMapRea
             }
         });
 
-        btAboutUs.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view){
-                Intent intent= new Intent(PassengerMainActivity.this, AboutUs.class);
-                PassengerMainActivity.this.startActivity(intent);
-            }
-        });
+//        btAboutUs.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view){
+//                Intent intent= new Intent(PassengerMainActivity.this, AboutUs.class);
+//                PassengerMainActivity.this.startActivity(intent);
+//            }
+//        });
 
         ibPassSetting.setOnClickListener(new View.OnClickListener() {
             @Override

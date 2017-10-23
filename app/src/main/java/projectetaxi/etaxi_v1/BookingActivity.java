@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -70,7 +71,12 @@ public class BookingActivity extends AppCompatActivity{
 
                             if(success) {
 
-                                Intent intent = new Intent(BookingActivity.this, DriverLoginActivity.class);
+                                Toast.makeText(
+                                        getApplicationContext(),
+                                        "Booking Done",
+                                        Toast.LENGTH_SHORT).show();
+
+                                Intent intent = new Intent(BookingActivity.this, PassengerMainActivity.class);
                                 BookingActivity.this.startActivity(intent);
                             } else {
 

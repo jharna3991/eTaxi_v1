@@ -24,7 +24,8 @@
         -->
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="AIzaSyDhbzQMMKFETRRuNNMyqCetJpzTrqZjEEw" />
+            android:value="AIzaSyAqJWEOY5JOgjgF3S9lAwesHm8oirnWNCs" />
+        <!--android:value="AIzaSyAqJWEOY5JOgjgF3S9lAwesHm8oirnWNCs"-->
 
         <activity android:name=".UserSelectActivity">
             <intent-filter>

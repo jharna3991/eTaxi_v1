@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/colorPrimary"
+    android:background="@color/colorBackground"
     tools:context="projectetaxi.etaxi_v1.PassengerLoginActivity">
 
     <TextView
@@ -13,20 +13,18 @@
         android:text="PASSENGER LOGIN"
         android:textSize="20sp"
         android:textStyle="bold"
-        android:textColor="@color/colorPrimary"
+        android:textColor="@color/colorBlackFade"
         android:layout_gravity="center_horizontal"
-        android:padding="10dp"
+        android:padding="15dp"
         android:id="@+id/tvPassengerLogin"
         android:layout_marginTop="50dp"
         android:layout_marginBottom="50dp"
-        android:paddingLeft="5dp"
-        android:paddingRight="5dp"
-        android:background="@color/colorBlack"/>
+        android:background="@drawable/yellow_button"/>
 
     <EditText
         style="@style/edit_text_style"
         android:id="@+id/etPassengerEmail"
-        android:backgroundTint="@color/colorBlack"
+        android:backgroundTint="@color/colorBlackFade"
         android:drawableLeft="@drawable/email_icon"
         android:drawableStart="@drawable/email_icon"
         android:hint="Email"
@@ -38,17 +36,18 @@
         android:drawableLeft="@drawable/password_icon"
         android:drawableStart="@drawable/password_icon"
         android:hint="Password"
-        android:backgroundTint="@color/colorBlack"
+        android:backgroundTint="@color/colorBlackFade"
         android:inputType="textPassword" />
 
     <Button
         android:id="@+id/btPassengerLogin"
-        style="@style/button_style_black"
-        android:textColor="@color/colorPrimary"
+        style="@style/button_style_yellow"
+        android:textColor="@color/colorBlackFade"
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="Log in"
+        android:textStyle="bold"
         android:layout_marginTop="25dp" />
 
     <TextView
@@ -59,7 +58,7 @@
         android:layout_marginTop="30dp"
         android:text="Not a Member?"
         android:layout_margin="10dp"
-        android:textColor="@color/colorBlack"
+        android:textColor="@color/colorBlackFade"
         android:textSize="15sp" />
 
     <Button
@@ -69,6 +68,7 @@
         style="@style/button_style_black"
         android:textColor="@color/colorPrimary"
         android:text="Register"
+        android:textStyle="bold"
         android:layout_gravity="center_horizontal" />
 
 </LinearLayout>
