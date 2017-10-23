@@ -13,6 +13,7 @@ import android.os.Bundle;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.content.ContextCompat;
+import android.util.Log;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -40,10 +41,12 @@ public class DestinationSelectionActivity extends FragmentActivity implements On
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
     GoogleApiClient mGoogleApiClient;
     Location mLastLocation;
-    Marker mCurrLocationMarker;
+    Marker mCurrLocationMarker, marker;
     LocationRequest mLocationRequest;
     private GoogleMap mMap;
     TextView tvLocInfo;
+
+    final String TAG = this.getClass().getName();
 
 
     @Override
@@ -252,6 +255,11 @@ public class DestinationSelectionActivity extends FragmentActivity implements On
 
     @Override
     public void onMapLongClick(LatLng latLng) {
+        if(marker!=null){
+            marker.remove();
+
+            Log.d(TAG, "" + latLng);
+        }
         mMap.addMarker(new MarkerOptions().position(latLng).title(latLng.toString()));
     }
 
