@@ -21,7 +21,7 @@ public class BookingRequest extends StringRequest {
     private Map<String, String> params;
 
     public BookingRequest(String roadType, String driverEmail, String passengerEmail, String srcLat,
-                          String srcLong, String destLat, String destLong, String bookingStatus,
+                          String srcLong, String destLat, String destLong, /*String bookingStatus*/
                           String amount, Response.Listener<String>listener) {
         super(Method.POST, BOOKING_REQUEST_URL, listener, null);
 
@@ -33,7 +33,7 @@ public class BookingRequest extends StringRequest {
         params.put("sourceLongitude", srcLong );
         params.put("destinationLatitude", destLat);
         params.put("destinationLongitude", destLong);
-        params.put("status", bookingStatus);
+        //params.put("status", bookingStatus);
         params.put("amount", amount);
     }
 

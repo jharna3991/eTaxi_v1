@@ -56,7 +56,7 @@ public class BookingActivity extends AppCompatActivity{
                 final String srcLong = data.srcLong;
                 final String destLat = data.destLat;
                 final String destLong = data.destLong;
-                final String bookingStatus = data.bookingStatus;
+                //final String bookingStatus = data.bookingStatus;
                 final String amount = data.amount;
 
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
@@ -93,7 +93,7 @@ public class BookingActivity extends AppCompatActivity{
                 };
 
                 BookingRequest request = new BookingRequest(roadType, driverEmail, passengerEmail,
-                        srcLat, srcLong, destLat, destLong, bookingStatus, amount, responseListener);
+                        srcLat, srcLong, destLat, destLong, /* bookingStatus*/ amount, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(BookingActivity.this);
                 queue.add(request);
             }
