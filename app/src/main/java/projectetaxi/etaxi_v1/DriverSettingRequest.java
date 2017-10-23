@@ -32,6 +32,9 @@ public class DriverSettingRequest extends StringRequest {
             String taxiNum,
             String license,
             String address,
+            String currentLat,
+            String currentLong,
+            String status,
             Response.Listener<String>listener) {
         super(Method.PUT, DRIVER_SETTING_URL, listener, null);
 
@@ -45,6 +48,10 @@ public class DriverSettingRequest extends StringRequest {
         params.put("taxiNumber", taxiNum);
         params.put("licenseNumber", license);
         params.put("address", address);
+        params.put("latitude", currentLat);
+        params.put("longitude", currentLong);
+        params.put("status", status);
+
     }
 
     @Override

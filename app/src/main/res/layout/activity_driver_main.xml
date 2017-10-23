@@ -7,6 +7,9 @@
     tools:context="projectetaxi.etaxi_v1.DriverMainActivity">
 
     <TextView
+        android:background="@color/colorPrimary"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
         android:textStyle="bold"
         android:id="@+id/tvDriName"
         android:layout_width="wrap_content"
@@ -21,6 +24,9 @@
         android:layout_alignParentStart="true" />
 
     <TextView
+        android:background="@color/colorPrimary"
+        android:paddingRight="10dp"
+        android:paddingLeft="10dp"
         android:id="@+id/tvDriEmail"
         android:textStyle="bold"
         android:layout_width="wrap_content"
@@ -45,19 +51,20 @@
         android:textColor="@color/colorPrimary"
         android:layout_marginBottom="8dp" />
 
-    <Button
-        style="@style/button_style_black"
-        android:id="@+id/btAboutUs"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textColor="@color/colorPrimary"
-        android:text="About Us"
-        android:layout_above="@+id/ibDriLogout"
-        android:layout_alignRight="@+id/ibDriLogout"
-        android:layout_alignEnd="@+id/ibDriLogout"
-        android:layout_marginBottom="28dp" />
+    <!--<Button-->
+        <!--style="@style/button_style_black"-->
+        <!--android:id="@+id/btAboutUs"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:textColor="@color/colorPrimary"-->
+        <!--android:text="About Us"-->
+        <!--android:layout_above="@+id/ibDriLogout"-->
+        <!--android:layout_alignRight="@+id/ibDriLogout"-->
+        <!--android:layout_alignEnd="@+id/ibDriLogout"-->
+        <!--android:layout_marginBottom="28dp" />-->
 
     <ImageButton
+        style="@style/button_style_yellow"
         android:id="@+id/ibDriLogout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -70,6 +77,7 @@
         android:layout_alignParentEnd="true" />
 
     <ImageButton
+        style="@style/button_style_yellow"
         android:id="@+id/ibDriSetting"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -98,11 +106,13 @@
         android:id="@+id/swDriStatus"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginRight="22dp"
-        android:layout_marginEnd="22dp"
-        android:layout_alignBaseline="@+id/btDriHistory"
-        android:layout_alignBottom="@+id/btDriHistory"
-        android:layout_toLeftOf="@+id/btAboutUs"
-        android:layout_toStartOf="@+id/btAboutUs" />
+        android:textOff="Busy"
+        android:textOn="Free"
+        android:layout_marginRight="69dp"
+        android:layout_marginEnd="69dp"
+        android:layout_above="@+id/btDriHistory"
+        android:layout_toLeftOf="@+id/ibDriLogout"
+        android:layout_toStartOf="@+id/ibDriLogout"
+        android:layout_marginBottom="52dp" />
 
 </RelativeLayout>

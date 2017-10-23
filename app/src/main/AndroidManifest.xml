@@ -49,9 +49,7 @@
         <activity android:name=".BookingActivity" />
         <activity android:name=".PassengerSettingActivity" />
         <activity android:name=".AboutUs" />
-        <activity android:name=".PassengerLogoutActivity" />
         <activity android:name=".ServedHistoryActivity" />
-        <activity android:name=".DriverLogoutActivity" />
         <activity android:name=".DriverSettingActivity" />
     </application>
 

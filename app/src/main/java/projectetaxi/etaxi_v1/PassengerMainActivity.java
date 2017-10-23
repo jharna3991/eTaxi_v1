@@ -75,7 +75,8 @@ public class PassengerMainActivity extends AppCompatActivity implements OnMapRea
         final ImageButton ibPassSetting = (ImageButton) findViewById(R.id.ibPassSetting);
         final ImageButton ibPassLogout = (ImageButton) findViewById(R.id.ibPassLogout);
 
-
+        tvPassEmail.setText(passenger.getPassenEmail());
+        tvPassName.setText(passenger.getPassenName());
 
         btBookTaxi.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -116,7 +117,7 @@ public class PassengerMainActivity extends AppCompatActivity implements OnMapRea
         ibPassLogout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
-                Intent intent= new Intent(PassengerMainActivity.this, PassengerLogoutActivity.class);
+                Intent intent= new Intent(PassengerMainActivity.this, UserSelectActivity.class);
                 PassengerMainActivity.this.startActivity(intent);
             }
         });
