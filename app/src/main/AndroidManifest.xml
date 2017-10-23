@@ -53,7 +53,6 @@
         <activity android:name=".ServedHistoryActivity" />
         <activity android:name=".DriverLogoutActivity" />
         <activity android:name=".DriverSettingActivity" />
-        <activity android:name=".DestinationSelectionActivity"></activity>
     </application>
 
 </manifest>
