@@ -24,6 +24,9 @@ import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
@@ -38,14 +41,20 @@ import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.IOException;
 import java.util.List;
 import java.util.Locale;
 
-public class DriverMainActivity extends AppCompatActivity implements OnMapReadyCallback,
+public class DriverMainActivity extends AppCompatActivity implements
+        OnMapReadyCallback,
         GoogleApiClient.ConnectionCallbacks,
         GoogleApiClient.OnConnectionFailedListener,
         LocationListener, GoogleMap.OnMarkerClickListener {
+
+    DriverLoginActivity driverLoginActivity = new DriverLoginActivity();
 
     private static String driverCurrentLat;
     private static String driverCurrentLng;
@@ -66,7 +75,6 @@ public class DriverMainActivity extends AppCompatActivity implements OnMapReadyC
     private GoogleMap mMap;
 
     final String TAG = this.getClass().getName();
-    DriverLoginActivity driver = new DriverLoginActivity();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -79,6 +87,8 @@ public class DriverMainActivity extends AppCompatActivity implements OnMapReadyC
                 getSupportFragmentManager()
                         .findFragmentById(R.id.map);
         mapFragment.getMapAsync(this);
+
+        Log.d(TAG, "DriverCurrentLatlng--------> "+driverCurrentLat+driverCurrentLng);
 
 
         final Switch statusSwitch = (Switch) findViewById(R.id.swDriStatus);
@@ -97,26 +107,121 @@ public class DriverMainActivity extends AppCompatActivity implements OnMapReadyC
 
                 if(isChecked) {
 
+
+
+                    Response.Listener<String> responseListener = new Response.Listener<String>() {
+
+
+                        @Override
+                        public void onResponse(String response) {
+
+                            try {
+                                JSONObject jsonResponse = new JSONObject(response);
+                                boolean success = jsonResponse.getBoolean("success");
+
+                                if(success) {
+
+                                    Toast.makeText(getApplicationContext(), "Driver is Free.",
+                                            Toast.LENGTH_SHORT).show();
+
+                                } else {
+
+                                    Toast.makeText(getApplicationContext(),
+                                            "Current Location Could Not Get Updated...",
+                                            Toast.LENGTH_SHORT).show();
+                                }
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+
+                        }
+                    };
+
+                    DriverSettingRequest request = new DriverSettingRequest(
+                            "" + driverLoginActivity.getDriName(),
+                            "" + driverLoginActivity.getDriEmail(),
+                            "" + driverLoginActivity.getDriPassword(),
+                            "" + driverLoginActivity.getDriMobileNum(),
+                            "" + driverLoginActivity.getDriTaxiNum(),
+                            "" + driverLoginActivity.getDriLicNum(),
+                            "" + driverLoginActivity.getDriAddress(),
+                            "" + driverCurrentLat,
+                            "" + driverCurrentLng,
+                            "Free",
+                            responseListener
+                    );
+
+                    RequestQueue queue = Volley.newRequestQueue(DriverMainActivity.this);
+                    queue.add(request);
+
+
 //                    Toast.makeText(
 //                            DriverMainActivity.this,
 //                            "Driver is Free",
 //                            Toast.LENGTH_SHORT).show();
                     tvDriStatus.setText("FREE");
                     tvDriStatus.setTextColor(getResources().getColor(R.color.green));
+
+
                 } else {
+
+                    Response.Listener<String> responseListener = new Response.Listener<String>() {
+
+
+                        @Override
+                        public void onResponse(String response) {
+
+                            try {
+                                JSONObject jsonResponse = new JSONObject(response);
+                                boolean success = jsonResponse.getBoolean("success");
+
+                                if(success) {
+
+                                    Toast.makeText(getApplicationContext(), "Driver is Busy Now.",
+                                            Toast.LENGTH_SHORT).show();
+
+                                } else {
+
+                                    Toast.makeText(getApplicationContext(),
+                                            "Current Location Could Not Get Updated...",
+                                            Toast.LENGTH_SHORT).show();
+                                }
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+
+                        }
+                    };
+
+                    DriverSettingRequest request = new DriverSettingRequest(
+                            "" + driverLoginActivity.getDriName(),
+                            "" + driverLoginActivity.getDriEmail(),
+                            "" + driverLoginActivity.getDriPassword(),
+                            "" + driverLoginActivity.getDriMobileNum(),
+                            "" + driverLoginActivity.getDriTaxiNum(),
+                            "" + driverLoginActivity.getDriLicNum(),
+                            "" + driverLoginActivity.getDriAddress(),
+                            "" + driverCurrentLat,
+                            "" + driverCurrentLng,
+                            "Busy",
+                            responseListener
+                    );
+
+                    RequestQueue queue = Volley.newRequestQueue(DriverMainActivity.this);
+                    queue.add(request);
 //                    Toast.makeText(
 //                            DriverMainActivity.this,
 //                            "Driver is Busy",
 //                            Toast.LENGTH_SHORT).show();
                     tvDriStatus.setText("BUSY");
-                    tvDriStatus.setTextColor(getResources().getColor(R.color.red));
+                    tvDriStatus.setTextColor(getResources().getColor(R.color.colorPrimary));
 
                 }
             }
         });
 
-//        tvDriEmail.setText(driver.getDriEmail());
-//        tvDriName.setText(driver.getDriName());
+//        tvDriEmail.setText(driverLoginActivity.getDriEmail());
+//        tvDriName.setText(driverLoginActivity.getDriName());
 
 //        btDriHistory.setOnClickListener(new View.OnClickListener() {
 //            @Override

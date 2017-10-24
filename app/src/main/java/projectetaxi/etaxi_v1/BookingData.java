@@ -6,13 +6,16 @@ package projectetaxi.etaxi_v1;
 
 public class BookingData {
 
+    static PassengerLoginActivity passengerLoginActivity = new PassengerLoginActivity();
+    static DestinationSelectionActivity destinationSelectionActivity = new DestinationSelectionActivity();
+
     public static String roadType = "City Road";
     public static String driverEmail = "xxx@xxx.com";
-    public static String passengerEmail;
-    public static String srcLat;
-    public static String srcLong;
-    public static String destLat;
-    public static String destLong;
+    public static String passengerEmail = passengerLoginActivity.getPassenEmail();
+    public static String srcLat = destinationSelectionActivity.getCurrentLat();
+    public static String srcLong = destinationSelectionActivity.getCurrentLng();
+    public static String destLat = destinationSelectionActivity.getDestinationLat();
+    public static String destLong = destinationSelectionActivity.getDestinationLng();
 //    public static String bookingStatus = "Confirm";
     public static String amount = "150.00";
 

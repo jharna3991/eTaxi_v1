@@ -25,6 +25,9 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.toolbox.Volley;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.api.GoogleApiClient;
 import com.google.android.gms.location.LocationListener;
@@ -38,6 +41,9 @@ import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.LatLng;
 import com.google.android.gms.maps.model.Marker;
 import com.google.android.gms.maps.model.MarkerOptions;
+
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.IOException;
 import java.util.List;
@@ -95,8 +101,8 @@ public class PassengerMainActivity extends AppCompatActivity implements
         final ImageButton ibPassSetting = (ImageButton) findViewById(R.id.ibPassSetting);
         final ImageButton ibPassLogout = (ImageButton) findViewById(R.id.ibPassLogout);
 
-//        tvPassEmail.setText(passenger.getPassenEmail());
-//        tvPassName.setText(passenger.getPassenName());
+//        tvPassEmail.setText(passengerLoginActivity.getPassenEmail());
+//        tvPassName.setText(passengerLoginActivity.getPassenName());
 
         btBookTaxi.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -316,7 +322,9 @@ public class PassengerMainActivity extends AppCompatActivity implements
             LocationServices.FusedLocationApi.removeLocationUpdates(mGoogleApiClient,
                     this);
         }
+
     }
+
 
     @Override
     public void onMapReady(GoogleMap googleMap) {

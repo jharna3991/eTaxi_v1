@@ -20,7 +20,8 @@ public class PassengerSettingActivity extends AppCompatActivity {
 
     final String TAG = this.getClass().getName();
 
-    PassengerLoginActivity passenger = new PassengerLoginActivity();
+    PassengerLoginActivity passengerLoginActivity = new PassengerLoginActivity();
+   PassengerMainActivity passengerMainActivity = new PassengerMainActivity();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +33,50 @@ public class PassengerSettingActivity extends AppCompatActivity {
 
         final Button name = (Button) findViewById(R.id.btChgName);
         final Button password = (Button) findViewById(R.id.btChgPassword);
+
+
+
+        Response.Listener<String> responseListener = new Response.Listener<String>() {
+
+
+            @Override
+            public void onResponse(String response) {
+
+                try {
+                    JSONObject jsonResponse = new JSONObject(response);
+                    boolean success = jsonResponse.getBoolean("success");
+
+                    if(success) {
+
+                        Toast.makeText(getApplicationContext(),
+                                "Current Location Updated.",
+                                Toast.LENGTH_SHORT).show();
+
+                    } else {
+
+                        Toast.makeText(getApplicationContext(),
+                                "Could Not Update Current Location",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        };
+
+        PassengerSettingRequest request = new PassengerSettingRequest(
+                "" + passengerLoginActivity.getPassenName(),
+                "" + passengerLoginActivity.getPassenEmail(),
+                "" + passengerLoginActivity.getPassenPassword(),
+                "" + passengerLoginActivity.getPassenMobileNum(),
+                "" + passengerLoginActivity.getPassenAddress(),
+                "" + passengerMainActivity.getPassengerCurrentLat(),
+                "" + passengerMainActivity.getPassengerCurrentLng(),
+                responseListener);
+        RequestQueue queue = Volley.newRequestQueue(PassengerSettingActivity.this);
+        queue.add(request);
+
 
         name.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,7 +96,7 @@ public class PassengerSettingActivity extends AppCompatActivity {
 
                             if(success) {
 
-                                passenger.setPassenName(name);
+                                passengerLoginActivity.setPassenName(name);
                                 Toast.makeText(getApplicationContext(), "Name Changed Successfully.",
                                         Toast.LENGTH_SHORT).show();
 
@@ -74,20 +119,22 @@ public class PassengerSettingActivity extends AppCompatActivity {
 
                 PassengerSettingRequest request = new PassengerSettingRequest(
                         name,
-                        "" + passenger.getPassenEmail(),
-                        "" + passenger.getPassenPassword(),
-                        "" + passenger.getPassenMobileNum(),
-                        "" + passenger.getPassenAddress(),
-                        "" + passenger.getCurrentLat(),
-                        "" + passenger.getCurrentLong(),
+                        "" + passengerLoginActivity.getPassenEmail(),
+                        "" + passengerLoginActivity.getPassenPassword(),
+                        "" + passengerLoginActivity.getPassenMobileNum(),
+                        "" + passengerLoginActivity.getPassenAddress(),
+                        "" + passengerMainActivity.getPassengerCurrentLat(),
+                        "" + passengerMainActivity.getPassengerCurrentLng(),
                         responseListener
                 );
 
                 Log.d(TAG, name);
-                Log.d(TAG, "email " + passenger.getPassenEmail());
-                Log.d(TAG, "password " + passenger.getPassenPassword());
-                Log.d(TAG, "mobileNum " + passenger.getPassenMobileNum());
-                Log.d(TAG, "address " + passenger.getPassenAddress());
+                Log.d(TAG, "email " + passengerLoginActivity.getPassenEmail());
+                Log.d(TAG, "password " + passengerLoginActivity.getPassenPassword());
+                Log.d(TAG, "mobileNum " + passengerLoginActivity.getPassenMobileNum());
+                Log.d(TAG, "address " + passengerLoginActivity.getPassenAddress());
+                Log.d(TAG, "lat " + passengerMainActivity.getPassengerCurrentLat());
+                Log.d(TAG, "long " + passengerMainActivity.getPassengerCurrentLng());
 
                 RequestQueue queue = Volley.newRequestQueue(PassengerSettingActivity.this);
                 queue.add(request);
@@ -113,7 +160,7 @@ public class PassengerSettingActivity extends AppCompatActivity {
 
                             if(success) {
 
-                                passenger.setPassenPassword(password);
+                                passengerLoginActivity.setPassenPassword(password);
 
                                 Toast.makeText(getApplicationContext(),
                                         "Password Changed.",
@@ -136,13 +183,13 @@ public class PassengerSettingActivity extends AppCompatActivity {
                 };
 
                 PassengerSettingRequest request = new PassengerSettingRequest(
-                        "" + passenger.getPassenName(),
-                        "" + passenger.getPassenEmail(),
+                        "" + passengerLoginActivity.getPassenName(),
+                        "" + passengerLoginActivity.getPassenEmail(),
                         password,
-                        "" + passenger.getPassenMobileNum(),
-                        "" + passenger.getPassenAddress(),
-                        "" + passenger.getCurrentLat(),
-                        "" + passenger.getCurrentLong(),
+                        "" + passengerLoginActivity.getPassenMobileNum(),
+                        "" + passengerLoginActivity.getPassenAddress(),
+                        "" + passengerMainActivity.getPassengerCurrentLat(),
+                        "" + passengerMainActivity.getPassengerCurrentLng(),
                         responseListener);
                 RequestQueue queue = Volley.newRequestQueue(PassengerSettingActivity.this);
                 queue.add(request);

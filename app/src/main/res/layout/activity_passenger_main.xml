@@ -65,12 +65,12 @@
         android:textSize="20sp"
         android:text="Book a Taxi"
         android:padding="20sp"
-        android:layout_marginBottom="51dp"
+        android:layout_marginBottom="45dp"
         android:layout_alignParentBottom="true"
         android:layout_toLeftOf="@+id/btPassHistory"
         android:layout_toStartOf="@+id/btPassHistory"
-        android:layout_marginRight="33dp"
-        android:layout_marginEnd="33dp" />
+        android:layout_marginRight="21dp"
+        android:layout_marginEnd="21dp" />
 
     <Button
         style="@style/button_style_black"
@@ -80,8 +80,10 @@
         android:textColor="@color/colorPrimary"
         android:text="History"
         android:textStyle="bold"
-        android:layout_marginBottom="22dp"
-        android:layout_above="@+id/ibPassLogout"
+        android:layout_marginRight="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_alignBaseline="@+id/btBookTaxi"
+        android:layout_alignBottom="@+id/btBookTaxi"
         android:layout_alignRight="@+id/ibPassLogout"
         android:layout_alignEnd="@+id/ibPassLogout" />
 
@@ -103,9 +105,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/logout_icon"
-        android:layout_marginRight="35dp"
-        android:layout_marginEnd="35dp"
-        android:layout_alignBottom="@+id/btBookTaxi"
+        android:layout_marginRight="25dp"
+        android:layout_marginEnd="25dp"
+        android:layout_alignTop="@+id/ibPassSetting"
         android:layout_alignParentRight="true"
         android:layout_alignParentEnd="true" />
 
@@ -115,9 +117,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/setting_icon"
-        android:layout_above="@+id/btPassHistory"
-        android:layout_alignRight="@+id/btPassHistory"
-        android:layout_alignEnd="@+id/btPassHistory"
-        android:layout_marginBottom="20dp" />
+        android:layout_above="@+id/btBookTaxi"
+        android:layout_toLeftOf="@+id/ibPassLogout"
+        android:layout_toStartOf="@+id/ibPassLogout"
+        android:layout_marginRight="10dp"
+        android:layout_marginEnd="10dp" />
 
 </RelativeLayout>
