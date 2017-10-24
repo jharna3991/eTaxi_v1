@@ -29,8 +29,8 @@ public class PassengerLoginActivity extends AppCompatActivity {
     private static String passenPassword;
     private static String passenAddress;
     private static String passenMobileNum;
-    //private static String currentLat = passenger.getPassengerCurrentLat();
-    //private static String currentLong = passenger.getPassengerCurrentLng();
+    //private static String currentLat = passengerLoginActivity.getPassengerCurrentLat();
+    //private static String currentLong = passengerLoginActivity.getPassengerCurrentLng();
 
     public static String getPassenToken() {
         return passenToken;

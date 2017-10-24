@@ -81,13 +81,11 @@
         android:id="@+id/ibDriLogout"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="22dp"
-        android:layout_marginEnd="25dp"
-        android:layout_marginRight="25dp"
+        android:layout_marginBottom="20dp"
         app:srcCompat="@drawable/logout_icon"
         android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignLeft="@+id/swDriStatus"
+        android:layout_alignStart="@+id/swDriStatus" />
 
     <ImageButton
         style="@style/button_style_yellow"
@@ -95,10 +93,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:srcCompat="@drawable/setting_icon"
-        android:layout_marginBottom="56dp"
-        android:layout_above="@+id/ibDriLogout"
-        android:layout_alignLeft="@+id/ibDriLogout"
-        android:layout_alignStart="@+id/ibDriLogout" />
+        android:layout_alignTop="@+id/ibDriLogout"
+        android:layout_toLeftOf="@+id/swDriStatus"
+        android:layout_toStartOf="@+id/swDriStatus"
+        android:layout_marginRight="19dp"
+        android:layout_marginEnd="19dp" />
 
     <TextView
         android:id="@+id/tvDriStatus"
@@ -113,7 +112,11 @@
         android:paddingTop="15dp"
         android:paddingBottom="15dp"
         android:layout_above="@+id/ibDriLogout"
-        android:layout_centerHorizontal="true" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_marginRight="19dp"
+        android:layout_marginEnd="19dp"
+        android:layout_marginBottom="28dp" />
 
     <Switch
         android:id="@+id/swDriStatus"

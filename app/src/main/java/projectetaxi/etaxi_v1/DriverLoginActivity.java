@@ -25,8 +25,6 @@ public class DriverLoginActivity extends AppCompatActivity {
     private static String driTaxiNum;
     private static String driLicNum;
     private static String driAddress;
-    private static String currentLat;
-    private static String currentLong;
     private static String status;
 
     public static String getDriToken() {
@@ -91,22 +89,6 @@ public class DriverLoginActivity extends AppCompatActivity {
 
     public static void setDriAddress(String driAddress) {
         DriverLoginActivity.driAddress = driAddress;
-    }
-
-    public static String getCurrentLat() {
-        return currentLat;
-    }
-
-    public static void setCurrentLat(String currentLat) {
-        DriverLoginActivity.currentLat = currentLat;
-    }
-
-    public static String getCurrentLong() {
-        return currentLong;
-    }
-
-    public static void setCurrentLong(String currentLong) {
-        DriverLoginActivity.currentLong = currentLong;
     }
 
     public static String getStatus() {

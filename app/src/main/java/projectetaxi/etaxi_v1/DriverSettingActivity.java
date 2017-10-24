@@ -17,7 +17,8 @@ import org.json.JSONObject;
 
 public class DriverSettingActivity extends AppCompatActivity {
 
-    DriverLoginActivity driver = new DriverLoginActivity();
+    DriverLoginActivity driverLoginActivity = new DriverLoginActivity();
+    DriverMainActivity driverMainActivity = new DriverMainActivity();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,6 +30,55 @@ public class DriverSettingActivity extends AppCompatActivity {
 
         final Button name = (Button) findViewById(R.id.btChgName);
         final Button password = (Button) findViewById(R.id.btChgPassword);
+
+
+
+        Response.Listener<String> responseListener = new Response.Listener<String>() {
+
+
+            @Override
+            public void onResponse(String response) {
+
+                try {
+                    JSONObject jsonResponse = new JSONObject(response);
+                    boolean success = jsonResponse.getBoolean("success");
+
+                    if(success) {
+
+                        Toast.makeText(getApplicationContext(), "Current Location Updated.",
+                                Toast.LENGTH_SHORT).show();
+
+                    } else {
+
+                        Toast.makeText(getApplicationContext(),
+                                "Current Location Could Not Get Updated...",
+                                Toast.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+
+            }
+        };
+
+        DriverSettingRequest request = new DriverSettingRequest(
+                "" + driverLoginActivity.getDriName(),
+                "" + driverLoginActivity.getDriEmail(),
+                "" + driverLoginActivity.getDriPassword(),
+                "" + driverLoginActivity.getDriMobileNum(),
+                "" + driverLoginActivity.getDriTaxiNum(),
+                "" + driverLoginActivity.getDriLicNum(),
+                "" + driverLoginActivity.getDriAddress(),
+                "" + driverMainActivity.getDriverCurrentLat(),
+                "" + driverMainActivity.getDriverCurrentLng(),
+                "" + driverLoginActivity.getStatus(),
+                responseListener
+        );
+
+        RequestQueue queue = Volley.newRequestQueue(DriverSettingActivity.this);
+        queue.add(request);
+
+
 
         name.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -48,7 +98,7 @@ public class DriverSettingActivity extends AppCompatActivity {
 
                             if(success) {
 
-                                driver.setDriName(name);
+                                driverLoginActivity.setDriName(name);
 
                                 Toast.makeText(getApplicationContext(), "Name Changed.",
                                         Toast.LENGTH_SHORT).show();
@@ -72,23 +122,23 @@ public class DriverSettingActivity extends AppCompatActivity {
 
                 DriverSettingRequest request = new DriverSettingRequest(
                         name,
-                        "" + driver.getDriEmail(),
-                        "" + driver.getDriPassword(),
-                        "" + driver.getDriMobileNum(),
-                        "" + driver.getDriTaxiNum(),
-                        "" + driver.getDriLicNum(),
-                        "" + driver.getDriAddress(),
-                        "" + driver.getCurrentLat(),
-                        "" + driver.getCurrentLong(),
-                        "" + driver.getStatus(),
+                        "" + driverLoginActivity.getDriEmail(),
+                        "" + driverLoginActivity.getDriPassword(),
+                        "" + driverLoginActivity.getDriMobileNum(),
+                        "" + driverLoginActivity.getDriTaxiNum(),
+                        "" + driverLoginActivity.getDriLicNum(),
+                        "" + driverLoginActivity.getDriAddress(),
+                        "" + driverMainActivity.getDriverCurrentLat(),
+                        "" + driverMainActivity.getDriverCurrentLng(),
+                        "" + driverLoginActivity.getStatus(),
                         responseListener
                 );
 
            /*     Log.d(TAG, name);
-                Log.d(TAG, "email " + passenger.getPassenEmail());
-                Log.d(TAG, "password " + passenger.getPassenPassword());
-                Log.d(TAG, "mobileNum " + passenger.getPassenMobileNum());
-                Log.d(TAG, "address " + passenger.getPassenAddress());
+                Log.d(TAG, "email " + passengerLoginActivity.getPassenEmail());
+                Log.d(TAG, "password " + passengerLoginActivity.getPassenPassword());
+                Log.d(TAG, "mobileNum " + passengerLoginActivity.getPassenMobileNum());
+                Log.d(TAG, "address " + passengerLoginActivity.getPassenAddress());
 */
                 RequestQueue queue = Volley.newRequestQueue(DriverSettingActivity.this);
                 queue.add(request);
@@ -114,7 +164,7 @@ public class DriverSettingActivity extends AppCompatActivity {
 
                             if(success) {
 
-                                driver.setDriPassword(password);
+                                driverLoginActivity.setDriPassword(password);
 
                                 Toast.makeText(getApplicationContext(), "Password Changed.",
                                         Toast.LENGTH_SHORT).show();
@@ -138,24 +188,24 @@ public class DriverSettingActivity extends AppCompatActivity {
                 };
 
                 DriverSettingRequest request = new DriverSettingRequest(
-                        "" + driver.getDriName(),
-                        "" + driver.getDriEmail(),
+                        "" + driverLoginActivity.getDriName(),
+                        "" + driverLoginActivity.getDriEmail(),
                         password,
-                        "" + driver.getDriMobileNum(),
-                        "" + driver.getDriTaxiNum(),
-                        "" + driver.getDriLicNum(),
-                        "" + driver.getDriAddress(),
-                        "" + driver.getCurrentLat(),
-                        "" + driver.getCurrentLong(),
-                        "" + driver.getStatus(),
+                        "" + driverLoginActivity.getDriMobileNum(),
+                        "" + driverLoginActivity.getDriTaxiNum(),
+                        "" + driverLoginActivity.getDriLicNum(),
+                        "" + driverLoginActivity.getDriAddress(),
+                        "" + driverMainActivity.getDriverCurrentLat(),
+                        "" + driverMainActivity.getDriverCurrentLng(),
+                        "" + driverLoginActivity.getStatus(),
                         responseListener
                 );
 
            /*     Log.d(TAG, name);
-                Log.d(TAG, "email " + passenger.getPassenEmail());
-                Log.d(TAG, "password " + passenger.getPassenPassword());
-                Log.d(TAG, "mobileNum " + passenger.getPassenMobileNum());
-                Log.d(TAG, "address " + passenger.getPassenAddress());
+                Log.d(TAG, "email " + passengerLoginActivity.getPassenEmail());
+                Log.d(TAG, "password " + passengerLoginActivity.getPassenPassword());
+                Log.d(TAG, "mobileNum " + passengerLoginActivity.getPassenMobileNum());
+                Log.d(TAG, "address " + passengerLoginActivity.getPassenAddress());
 */
                 RequestQueue queue = Volley.newRequestQueue(DriverSettingActivity.this);
                 queue.add(request);
