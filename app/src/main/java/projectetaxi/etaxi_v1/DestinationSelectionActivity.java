@@ -52,6 +52,12 @@ public class DestinationSelectionActivity extends FragmentActivity implements
     private static String destinationLat;
     private static String destinationLng;
 
+    private static double doubleCurrentLat;
+    private static double doubleCurrentLng;
+    private static double doubleDestinationLat;
+    private static double doubleDestinationLng;
+
+
     public static String getCurrentLat() {
         return currentLat;
     }
@@ -66,6 +72,39 @@ public class DestinationSelectionActivity extends FragmentActivity implements
 
     public static String getDestinationLng() {
         return destinationLng;
+    }
+
+
+    public static double getDoubleCurrentLat() {
+        return doubleCurrentLat;
+    }
+
+    public static void setDoubleCurrentLat(double doubleCurrentLat) {
+        DestinationSelectionActivity.doubleCurrentLat = doubleCurrentLat;
+    }
+
+    public static double getDoubleCurrentLng() {
+        return doubleCurrentLng;
+    }
+
+    public static void setDoubleCurrentLng(double doubleCurrentLng) {
+        DestinationSelectionActivity.doubleCurrentLng = doubleCurrentLng;
+    }
+
+    public static double getDoubleDestinationLat() {
+        return doubleDestinationLat;
+    }
+
+    public static void setDoubleDestinationLat(double doubleDestinationLat) {
+        DestinationSelectionActivity.doubleDestinationLat = doubleDestinationLat;
+    }
+
+    public static double getDoubleDestinationLng() {
+        return doubleDestinationLng;
+    }
+
+    public static void setDoubleDestinationLng(double doubleDestinationLng) {
+        DestinationSelectionActivity.doubleDestinationLng = doubleDestinationLng;
     }
 
     public static final int MY_PERMISSIONS_REQUEST_LOCATION = 99;
@@ -183,6 +222,9 @@ public class DestinationSelectionActivity extends FragmentActivity implements
         Log.d(TAG, "Current Location----> " + latLng);
         Log.d(TAG, "Current Latitude----> " + location.getLatitude());
         Log.d(TAG, "Current Longitude----> " + location.getLongitude());
+
+        doubleCurrentLat = location.getLatitude();
+        doubleCurrentLng = location.getLongitude();
 
         currentLat = String.valueOf(location.getLatitude());
         currentLng = String.valueOf(location.getLongitude());
@@ -351,10 +393,13 @@ public class DestinationSelectionActivity extends FragmentActivity implements
 
 
     @Override
-    public void onMapLongClick(LatLng latLng) {
+    public void onMapLongClick(final LatLng latLng) {
 
         Log.d(TAG, "--------Long Clicked lat before if statement: " + latLng.latitude);
         Log.d(TAG, "--------Long Clicked lng before if statement: " + latLng.longitude);
+
+        doubleDestinationLat = latLng.latitude;
+        doubleDestinationLng = latLng.longitude;
 
         final String lat = String.valueOf(latLng.latitude);
         final String lng = String.valueOf(latLng.longitude);
