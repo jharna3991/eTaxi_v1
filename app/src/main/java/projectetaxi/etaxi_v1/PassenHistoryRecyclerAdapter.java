@@ -12,7 +12,8 @@ import java.util.ArrayList;
  * Created by Ashim Bazracharya on 10/21/2017.
  */
 
-public class PassenHistoryRecyclerAdapter extends RecyclerView.Adapter<PassenHistoryRecyclerAdapter.HistoryViewHolder>{
+public class PassenHistoryRecyclerAdapter extends
+        RecyclerView.Adapter<PassenHistoryRecyclerAdapter.HistoryViewHolder>{
 
     ArrayList<PassengerHistory> arrayList = new ArrayList<>();
 
@@ -35,10 +36,8 @@ public class PassenHistoryRecyclerAdapter extends RecyclerView.Adapter<PassenHis
     public void onBindViewHolder(HistoryViewHolder holder, int position) {
 
         holder.tvPassenDate.setText(arrayList.get(position).getBookingDate());
-        holder.tvSourceLatitude.setText(arrayList.get(position).getSrcLat());
-        holder.tvSourceLongitude.setText(arrayList.get(position).getSrcLong());
-        holder.tvDestinationLatitude.setText(arrayList.get(position).getDestLat());
-        holder.tvDestinationLongitude.setText(arrayList.get(position).getDestLong());
+        holder.tvSourceLocation.setText(arrayList.get(position).getSrcLoc());
+        holder.tvDestinationLocation.setText(arrayList.get(position).getDestLoc());
         holder.tvPassenAmount.setText(arrayList.get(position).getPassenAmount());
 
     }
@@ -50,20 +49,16 @@ public class PassenHistoryRecyclerAdapter extends RecyclerView.Adapter<PassenHis
 
     public static class HistoryViewHolder extends RecyclerView.ViewHolder {
 
-        TextView tvPassenDate, tvSourceLatitude, tvSourceLongitude, tvDestinationLatitude,
-                tvDestinationLongitude, tvPassenAmount;
+        TextView tvPassenDate, tvSourceLocation, tvDestinationLocation, tvPassenAmount;
 
         public HistoryViewHolder(View itemView) {
+
             super(itemView);
 
             tvPassenDate = (TextView)itemView.findViewById(R.id.tvPassDate);
-            tvSourceLatitude = (TextView)itemView.findViewById(R.id.tvSourceLatitude);
-            tvSourceLongitude = (TextView)itemView.findViewById(R.id.tvSourceLongitude);
-            tvDestinationLatitude = (TextView)itemView.findViewById(R.id.tvDestinationLatitude);
-            tvDestinationLongitude = (TextView)itemView.findViewById(R.id.tvDestinationLongitude);
+            tvSourceLocation = (TextView)itemView.findViewById(R.id.tvSourceLocation);
+            tvDestinationLocation = (TextView)itemView.findViewById(R.id.tvDestinationLocation);
             tvPassenAmount = (TextView)itemView.findViewById(R.id.tvPassAmount);
-
-
         }
     }
 }

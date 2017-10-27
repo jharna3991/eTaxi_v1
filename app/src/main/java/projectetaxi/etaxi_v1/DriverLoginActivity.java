@@ -139,6 +139,9 @@ public class DriverLoginActivity extends AppCompatActivity {
                                 driPassword = password;
                                 Intent intent = new Intent(DriverLoginActivity.this, DriverMainActivity.class);
                                 DriverLoginActivity.this.startActivity(intent);
+
+                                Toast.makeText(getApplicationContext(), "Logged In.",
+                                        Toast.LENGTH_SHORT).show();
                             } else {
 
                                 Toast.makeText(getApplicationContext(), "Login Failed, try again",

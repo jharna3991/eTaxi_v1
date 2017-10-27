@@ -38,7 +38,7 @@
         android:drawableLeft="@drawable/email_icon"
         android:drawableStart="@drawable/email_icon"
         android:hint="Email"
-        android:inputType="textWebEmailAddress"
+        android:inputType="textEmailAddress"
         android:textColor="@color/colorBlackFade"
         android:backgroundTint="@color/colorBlackFade"/>
 
@@ -53,14 +53,16 @@
         android:backgroundTint="@color/colorBlackFade"/>
 
     <EditText
-        style="@style/edit_text_style"
         android:id="@+id/etDriverMobileNum"
+        style="@style/edit_text_style"
+        android:backgroundTint="@color/colorBlackFade"
+        android:digits="1234567890"
         android:drawableLeft="@drawable/mobile_icon"
         android:drawableStart="@drawable/mobile_icon"
         android:hint="Mobile Number"
-        android:inputType="text"
-        android:textColor="@color/colorBlackFade"
-        android:backgroundTint="@color/colorBlackFade"/>
+        android:inputType="phone"
+        android:maxLength="10"
+        android:textColor="@color/colorBlackFade" />
 
     <EditText
         style="@style/edit_text_style"
@@ -68,7 +70,7 @@
         android:drawableLeft="@drawable/license_icon"
         android:drawableStart="@drawable/license_icon"
         android:hint="License no."
-        android:inputType="text"
+        android:inputType="number"
         android:textColor="@color/colorBlackFade"
         android:backgroundTint="@color/colorBlackFade"/>
 

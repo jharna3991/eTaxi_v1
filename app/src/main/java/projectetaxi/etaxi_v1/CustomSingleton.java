@@ -10,13 +10,13 @@ import com.android.volley.toolbox.Volley;
  * Created by Ashim Bazracharya on 10/21/2017.
  */
 
-public class PassengerHistorySingleton {
+public class CustomSingleton {
 
-    private static PassengerHistorySingleton mInstance;
+    private static CustomSingleton mInstance;
     private RequestQueue requestQueue;
     private static Context mCtx;
 
-    private PassengerHistorySingleton(Context context) {
+    private CustomSingleton(Context context) {
 
         mCtx = context;
         requestQueue = getRequestQueue();
@@ -31,11 +31,11 @@ public class PassengerHistorySingleton {
         return requestQueue;
     }
 
-    public static synchronized PassengerHistorySingleton getInstance(Context context) {
+    public static synchronized CustomSingleton getInstance(Context context) {
 
         if(mInstance == null) {
 
-            mInstance = new PassengerHistorySingleton(context);
+            mInstance = new CustomSingleton(context);
         }
 
         return mInstance;

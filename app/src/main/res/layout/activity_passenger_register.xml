@@ -48,16 +48,18 @@
             android:backgroundTint="@color/colorBlackFade"
             android:inputType="textPassword" />
 
-        <EditText
-            style="@style/edit_text_style"
-            android:id="@+id/etPassengerMobileNum"
-            android:drawableLeft="@drawable/mobile_icon"
-            android:drawableStart="@drawable/mobile_icon"
-            android:hint="Mobile Number"
-            android:inputType="text"
-            android:backgroundTint="@color/colorBlackFade"/>
+    <EditText
+        android:id="@+id/etPassengerMobileNum"
+        style="@style/edit_text_style"
+        android:backgroundTint="@color/colorBlackFade"
+        android:digits="1234567890"
+        android:drawableLeft="@drawable/mobile_icon"
+        android:drawableStart="@drawable/mobile_icon"
+        android:hint="Mobile Number"
+        android:maxLength="10"
+        android:inputType="phone" />
 
-        <EditText
+    <EditText
             style="@style/edit_text_style"
             android:id="@+id/etPassengerAddress"
             android:drawableLeft="@drawable/address_icon"

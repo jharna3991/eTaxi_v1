@@ -115,8 +115,6 @@ public class DestinationSelectionActivity extends FragmentActivity implements
     LocationRequest mLocationRequest;
     private GoogleMap mMap;
 
-    TextView tvLocInfo;
-
     final String TAG = this.getClass().getName();
 
 
@@ -124,6 +122,7 @@ public class DestinationSelectionActivity extends FragmentActivity implements
     protected void onCreate(Bundle savedInstanceState) {
 
         super.onCreate(savedInstanceState);
+
         setContentView(R.layout.activity_destination_selection);
         if (android.os.Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             checkLocationPermission();
@@ -230,8 +229,11 @@ public class DestinationSelectionActivity extends FragmentActivity implements
         currentLng = String.valueOf(location.getLongitude());
 
 
-        Log.d(TAG, "Passenger Current Longitude----> " + location.getLatitude());
-        Log.d(TAG, "Passenger Current Longitude----> " + location.getLongitude());
+        Log.d(TAG, "Passenger Current Latitude----> " + currentLat);
+        Log.d(TAG, "Passenger Current Longitude----> " + currentLng);
+
+        Log.d(TAG, "Passenger Class Current Longitude----> " + location.getLatitude());
+        Log.d(TAG, "Passenger Class Current Longitude----> " + location.getLongitude());
 
         MarkerOptions markerOptions = new MarkerOptions();
         markerOptions.position(latLng);
@@ -395,14 +397,20 @@ public class DestinationSelectionActivity extends FragmentActivity implements
     @Override
     public void onMapLongClick(final LatLng latLng) {
 
+        final String lat = String.valueOf(latLng.latitude);
+        final String lng = String.valueOf(latLng.longitude);
+
+        destinationLat = lat;
+        destinationLng = lng;
+
+        Log.d(TAG, "--------Dest Latitude: " + destinationLat);
+        Log.d(TAG, "--------Dest Longitude: " + destinationLng);
+
         Log.d(TAG, "--------Long Clicked lat before if statement: " + latLng.latitude);
         Log.d(TAG, "--------Long Clicked lng before if statement: " + latLng.longitude);
 
         doubleDestinationLat = latLng.latitude;
         doubleDestinationLng = latLng.longitude;
-
-        final String lat = String.valueOf(latLng.latitude);
-        final String lng = String.valueOf(latLng.longitude);
 
         Log.d(TAG, "Long Clicked latlng: " + latLng);
 

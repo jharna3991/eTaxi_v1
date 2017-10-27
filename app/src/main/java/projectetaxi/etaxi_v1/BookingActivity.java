@@ -4,6 +4,7 @@ import android.app.AlertDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
@@ -21,12 +22,19 @@ import org.json.JSONObject;
 
 public class BookingActivity extends AppCompatActivity{
 
+    final String TAG = this.getClass().getName();
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_booking);
 
         final BookingData data = new BookingData();
+
+        final PassengerLoginActivity passengerLoginActivity = new PassengerLoginActivity();
+
+        final DestinationSelectionActivity destinationSelectionActivity =
+                new DestinationSelectionActivity();
 
         final Button btDestination = (Button) findViewById(R.id.btDestination);
         final Button btNearbyDriver = (Button) findViewById(R.id.btNearbyDriver);
@@ -51,13 +59,24 @@ public class BookingActivity extends AppCompatActivity{
 
                 final String roadType = data.roadType;
                 final String driverEmail = data.driverEmail;
-                final String passengerEmail = data.passengerEmail;
-                final String srcLat = data.srcLat;
-                final String srcLong = data.srcLong;
-                final String destLat = data.destLat;
-                final String destLong = data.destLong;
+                final String passengerEmail = passengerLoginActivity.getPassenEmail();
+                final String srcLat = destinationSelectionActivity.getCurrentLat();
+                final String srcLong = destinationSelectionActivity.getCurrentLng();
+                final String destLat = destinationSelectionActivity.getDestinationLat();
+                final String destLong = destinationSelectionActivity.getDestinationLng();
                 //final String bookingStatus = data.bookingStatus;
                 final String amount = data.amount;
+
+                Log.d(TAG, "Booking Data: "
+                        + roadType
+                        + driverEmail
+                        + passengerEmail
+                        + srcLat
+                        + srcLong
+                        + destLat
+                        + destLong
+                        + amount
+                );
 
                 Response.Listener<String> responseListener = new Response.Listener<String>() {
 
