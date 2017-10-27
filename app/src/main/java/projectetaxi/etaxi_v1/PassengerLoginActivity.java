@@ -21,7 +21,6 @@ public class PassengerLoginActivity extends AppCompatActivity {
     BookingData booking = new BookingData();
 
     final String TAG = this.getClass().getName();
-    static PassengerMainActivity passenger = new PassengerMainActivity();
 
     private static String passenToken;
     private static String passenName;
@@ -108,9 +107,13 @@ public class PassengerLoginActivity extends AppCompatActivity {
 
                             if(success) {
 
-                                Intent intent = new Intent(PassengerLoginActivity.this, PassengerMainActivity.class);
+                                Intent intent = new Intent(
+                                        PassengerLoginActivity.this,
+                                        PassengerMainActivity.class);
+
                                 PassengerLoginActivity.this.startActivity(intent);
-                                Toast.makeText(getApplicationContext(), jsonResponse.getString("api_token"),
+
+                                Toast.makeText(getApplicationContext(), "Logged In.",
                                         Toast.LENGTH_SHORT).show();
                                 passenPassword = password;
                             } else {
@@ -134,13 +137,9 @@ public class PassengerLoginActivity extends AppCompatActivity {
 
         });
 
-        booking.setPassengerEmail(passenEmail);
-
         btPassengerRegister.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view){
-
-                Log.d(TAG, "Passenger Email: " + booking.getPassengerEmail());
 
                 Intent loginIntent= new Intent(PassengerLoginActivity.this, PassengerRegisterActivity.class);
                 PassengerLoginActivity.this.startActivity(loginIntent);

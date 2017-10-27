@@ -37,6 +37,7 @@
         android:drawableStart="@drawable/password_icon"
         android:hint="Password"
         android:backgroundTint="@color/colorBlackFade"
+        
         android:inputType="textPassword"/>
 
     <Button

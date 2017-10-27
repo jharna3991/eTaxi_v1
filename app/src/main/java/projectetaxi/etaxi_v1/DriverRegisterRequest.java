@@ -16,7 +16,7 @@ public class DriverRegisterRequest extends StringRequest {
     private Map<String, String> params;
 
     public DriverRegisterRequest(String name, String email, String password, String mobileNum,
-                                 String licNum, String taxiNum, String address,
+                                 String taxiNum, String licNum, String address,
                                  Response.Listener<String> listener) {
         super(Method.POST, REGISTER_REQUEST_URL, listener, null);
 
@@ -25,8 +25,8 @@ public class DriverRegisterRequest extends StringRequest {
         params.put("email", email);
         params.put("password", password);
         params.put("mobileNumber", mobileNum);
-        params.put("licenseNumber", licNum);
         params.put("taxiNumber", taxiNum);
+        params.put("licenseNumber", licNum);
         params.put("address", address);
     }
 

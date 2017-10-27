@@ -6,14 +6,20 @@ package projectetaxi.etaxi_v1;
 
 public class PassengerHistory {
 
-    private String bookingDate, srcLat, srcLong, destLat, destLong, passenAmount;
+    private String bookingDate, srcLoc, destLoc, passenAmount;
 
-    public PassengerHistory(String bookingDate, String srcLat, String srcLong, String destLat, String destLong, String passenAmount) {
+    public PassengerHistory() {
+
+    }
+
+    public PassengerHistory(String bookingDate,
+                            String srcLoc,
+                            String destLoc,
+                            String passenAmount
+    ) {
         this.bookingDate = bookingDate;
-        this.srcLat = srcLat;
-        this.srcLong = srcLong;
-        this.destLat = destLat;
-        this.destLong = destLong;
+        this.srcLoc = srcLoc;
+        this.destLoc = destLoc;
         this.passenAmount = passenAmount;
     }
 
@@ -25,36 +31,20 @@ public class PassengerHistory {
         this.bookingDate = bookingDate;
     }
 
-    public String getSrcLat() {
-        return srcLat;
+    public String getSrcLoc() {
+        return srcLoc;
     }
 
-    public void setSrcLat(String srcLat) {
-        this.srcLat = srcLat;
+    public void setSrcLoc(String srcLoc) {
+        this.srcLoc = srcLoc;
     }
 
-    public String getSrcLong() {
-        return srcLong;
+    public String getDestLoc() {
+        return destLoc;
     }
 
-    public void setSrcLong(String srcLong) {
-        this.srcLong = srcLong;
-    }
-
-    public String getDestLat() {
-        return destLat;
-    }
-
-    public void setDestLat(String destLat) {
-        this.destLat = destLat;
-    }
-
-    public String getDestLong() {
-        return destLong;
-    }
-
-    public void setDestLong(String destLong) {
-        this.destLong = destLong;
+    public void setDestLoc(String destLoc) {
+        this.destLoc = destLoc;
     }
 
     public String getPassenAmount() {
