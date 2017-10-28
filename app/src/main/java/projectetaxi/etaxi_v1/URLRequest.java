@@ -8,24 +8,17 @@ public class URLRequest {
 
     private static int num1 = 100;
     private static int num2 = 4;
-    private static String API_KEY = "AIzaSyC8rwIajQlMPMrX_CRjSVehZioQ-fdAvtU";
-    private static String latitude;
-    private static String longitude;
 
-    public static String getLatitude() {
-        return latitude;
+    private static String lat;
+    private static String lng;
+
+
+    public static void setLat(String lat) {
+        URLRequest.lat = lat;
     }
 
-    public static void setLatitude(String latitude) {
-        URLRequest.latitude = latitude;
-    }
-
-    public static String getLongitude() {
-        return longitude;
-    }
-
-    public static void setLongitude(String longitude) {
-        URLRequest.longitude = longitude;
+    public static void setLng(String lng) {
+        URLRequest.lng = lng;
     }
 
     public static String driverLoginRequest = "http://192.168."+num1+"."+num2+":8000/api/v1/driver/login";
@@ -34,8 +27,12 @@ public class URLRequest {
     public static String passengerRequest = "http://192.168."+num1+"."+num2+":8000/api/v1/passengers";
     public static String bookingHistoryRequest = "http://192.168."+num1+"."+num2+":8000/api/v1/taxi_booking/history";
     public static String bookingRequest = "http://192.168."+num1+"."+num2+":8000/api/v1/taxi_bookings";
-    public static String getAddressFromLatlongUrl = "https://maps.googleapis.com/maps/api/geocode/json?latlng="
-            + latitude + ","
-            + longitude + "&key="
-            + API_KEY;
+
+    public static String getAddressFromLatlongUrl() {
+
+        String url = "https://maps.googleapis.com/maps/api/geocode/json?latlng="
+                + lat + ","
+                + lng;
+        return url;
+    }
 }

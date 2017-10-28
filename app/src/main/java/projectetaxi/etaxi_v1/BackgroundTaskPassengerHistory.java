@@ -66,32 +66,19 @@ public class BackgroundTaskPassengerHistory {
                                 String destLat = jsonObject.getString("destinationLatitude");
                                 String destLng = jsonObject.getString("destinationLongitude");
 
-                                Log.d(TAG, "Source Latlong: " + sourceLat + sourceLng);
-                                Log.d(TAG, "Destination Latlong: " + destLat + destLng);
 
-
-                                LatlngToAddress srcAddress = new LatlngToAddress();
-                                srcAddress.latlngToAddress(sourceLat, sourceLng);
-                                String source = srcAddress.address;
-
-                                LatlngToAddress destAddress = new LatlngToAddress();
-                                destAddress.latlngToAddress(destLat, destLng);
-                                String destination = destAddress.address;
-
-                                Log.d(TAG, "Source Loc: " + source);
-                                Log.d(TAG, "Destination Loc: " + destination);
 
                                 PassengerHistory passengerHistory = new PassengerHistory(
                                         jsonObject.getJSONObject("date").getString("date"),
-                                        source,
-                                        destination,
+                                        jsonObject.getString("sourceLatitude"),
+                                        jsonObject.getString("sourceLongitude"),
+                                        jsonObject.getString("destinationLatitude"),
+                                        jsonObject.getString("destinationLongitude"),
                                         jsonObject.getString("amount"));
 
                                 arrayList.add(passengerHistory);
 
                                 Log.d(TAG, "Booking History   " + passengerHistory.getBookingDate());
-                                Log.d(TAG, "Booking History   " + passengerHistory.getSrcLoc());
-                                Log.d(TAG, "Booking History   " + passengerHistory.getDestLoc());
                                 Log.d(TAG, "Booking History   " + passengerHistory.getPassenAmount());
 
                                 count++;

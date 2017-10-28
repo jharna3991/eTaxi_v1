@@ -20,24 +20,40 @@
             android:id="@+id/tvDate"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Date      :"
+            android:text="Date :"
             android:textColor="@color/colorBlackFade"
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/tvLocation"
+            android:id="@+id/tvSLat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="From     :"
+            android:text="From(Latitude) :"
+            android:textColor="@color/colorBlackFade"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvSLng"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="From(Longitude) :"
             android:textColor="@color/colorBlackFade"
             android:textSize="16sp" />
 
 
         <TextView
-            android:id="@+id/tvDestination"
+            android:id="@+id/tvDLat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="To          :"
+            android:text="To(Latitude) :"
+            android:textColor="@color/colorBlackFade"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvDLng"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="To(Longitude) :"
             android:textColor="@color/colorBlackFade"
             android:textSize="16sp" />
 
@@ -68,19 +84,35 @@
             android:textSize="16sp" />
 
         <TextView
-            android:id="@+id/tvSourceLocation"
+            android:id="@+id/tvSourceLat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Source Address"
+            android:text="Source Latitude"
+            android:textColor="@color/colorBlackFade"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvSourceLng"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Source Longitude"
             android:textColor="@color/colorBlackFade"
             android:textSize="16sp" />
 
 
         <TextView
-            android:id="@+id/tvDestinationLocation"
+            android:id="@+id/tvDestinationLat"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Dest Addrress"
+            android:text="Destination Latitude"
+            android:textColor="@color/colorBlackFade"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tvDestinationLng"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Destination Longitude"
             android:textColor="@color/colorBlackFade"
             android:textSize="16sp" />
 
