@@ -36,8 +36,10 @@ public class PassenHistoryRecyclerAdapter extends
     public void onBindViewHolder(HistoryViewHolder holder, int position) {
 
         holder.tvPassenDate.setText(arrayList.get(position).getBookingDate());
-        holder.tvSourceLocation.setText(arrayList.get(position).getSrcLoc());
-        holder.tvDestinationLocation.setText(arrayList.get(position).getDestLoc());
+        holder.tvSourceLat.setText(arrayList.get(position).getSourceLat());
+        holder.tvSourceLng.setText(arrayList.get(position).getSourceLng());
+        holder.tvDestinationLat.setText(arrayList.get(position).getDestLat());
+        holder.tvDestinationLng.setText(arrayList.get(position).getDestLng());
         holder.tvPassenAmount.setText(arrayList.get(position).getPassenAmount());
 
     }
@@ -49,15 +51,17 @@ public class PassenHistoryRecyclerAdapter extends
 
     public static class HistoryViewHolder extends RecyclerView.ViewHolder {
 
-        TextView tvPassenDate, tvSourceLocation, tvDestinationLocation, tvPassenAmount;
+        TextView tvPassenDate, tvSourceLat, tvSourceLng, tvDestinationLat, tvDestinationLng, tvPassenAmount;
 
         public HistoryViewHolder(View itemView) {
 
             super(itemView);
 
             tvPassenDate = (TextView)itemView.findViewById(R.id.tvPassDate);
-            tvSourceLocation = (TextView)itemView.findViewById(R.id.tvSourceLocation);
-            tvDestinationLocation = (TextView)itemView.findViewById(R.id.tvDestinationLocation);
+            tvSourceLat = (TextView)itemView.findViewById(R.id.tvSourceLat);
+            tvSourceLng = (TextView)itemView.findViewById(R.id.tvSourceLng);
+            tvDestinationLat = (TextView)itemView.findViewById(R.id.tvDestinationLat);
+            tvDestinationLng = (TextView)itemView.findViewById(R.id.tvDestinationLat);
             tvPassenAmount = (TextView)itemView.findViewById(R.id.tvPassAmount);
         }
     }

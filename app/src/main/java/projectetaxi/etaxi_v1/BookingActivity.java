@@ -112,7 +112,7 @@ public class BookingActivity extends AppCompatActivity{
                 };
 
                 BookingRequest request = new BookingRequest(roadType, driverEmail, passengerEmail,
-                        srcLat, srcLong, destLat, destLong, /* bookingStatus*/ amount, responseListener);
+                        srcLat, srcLong, destLat, destLong, amount, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(BookingActivity.this);
                 queue.add(request);
             }
